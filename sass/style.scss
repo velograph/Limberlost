@@ -21,7 +21,18 @@
 @import "slick";
 
 body {
+	margin: 0;
+	padding: 0;
 	img {
 		height: auto;
+		float: left;
+	}
+	.section {
+		@include row();
+	}
+	.related-posts {
+		.section-portal {
+			@include span-columns(2);
+		}
 	}
 }
