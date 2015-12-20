@@ -27,8 +27,66 @@ body {
 		height: auto;
 		float: left;
 	}
-	.section {
+	.section-portal {
+		.section-content {
+			// left: 50%;
+			// position: absolute;
+			// top: 50%;
+			// @include transform(translate(-50%,-50%));
+		}
+	}
+}
+
+.alternating {
+	.alternated {
 		@include row();
+	}
+	.regular {
+		@include row();
+	}
+	@include media( $large-screen ) {
+		.alternated {
+			@include row();
+			.section-portal {
+				float: left;
+				margin: 0;
+				position: relative;
+				width: 50%;
+				.section-content {
+					left: 50%;
+					position: absolute;
+					top: 50%;
+					@include transform(translate(-50%,-50%));
+				}
+			}
+			.section-supporting {
+				float: right;
+				margin: 0;
+				width: 50%;
+			}
+		}
+		.regular {
+			@include row();
+			@include direction-context(right-to-left) {
+				.section-portal {
+					float: right;
+					margin: 0;
+					position: relative;
+					width: 50%;
+					.section-content {
+						left: 50%;
+						position: absolute;
+						top: 50%;
+						@include transform(translate(-50%,-50%));
+					}
+				}
+				.section-supporting {
+					float: right;
+					margin: 0;
+					width: 50%;
+				}
+			}
+		}
 	}
 	.related-posts {
 		.section-portal {

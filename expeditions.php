@@ -12,9 +12,11 @@
 
 get_header(); ?>
 
-	<div class="content-area">
+	<div class="content-area alternating">
 
 		<?php
+
+		$oddpost = 'alternated';
 
 	    $args = array(
 	        'post_type' => 'product',
@@ -35,7 +37,7 @@ get_header(); ?>
 
 	        <?php $query->the_post(); ?>
 
-			<section class="section">
+			<section class="<?php echo $oddpost; ?>">
 				<div class="section-portal">
 
 					<div class="section-content">
@@ -76,6 +78,11 @@ get_header(); ?>
 				</div>
 
 			</section>
+
+			<?php /* Changes every other post to a different class */
+				if ('alternated' == $oddpost) $oddpost = 'regular';
+				else $oddpost = 'alternated';
+			?>
 
 		    <?php endwhile; ?>
 
