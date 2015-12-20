@@ -51,6 +51,7 @@ function limberlost_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'limberlost' ),
+		'supporting' => __( 'Supporting Menu', 'limberlost' ),
 	) );
 
 	/*
@@ -128,28 +129,13 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-add_image_size( 'portal-mobile', '480', '360', 'true' );
+add_image_size( 'portal-mobile', '480', '480', 'true' );
 add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
 // Remove Woo styling
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-/**
- * TypeKit Fonts
- */
-function theme_typekit() {
-    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/bpk6lyp.js');
-}
-add_action( 'wp_enqueue_scripts', 'theme_typekit' );
-
-function theme_typekit_inline() {
-  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
-  	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<?php }
-}
-add_action( 'wp_head', 'theme_typekit_inline' );
 
 // Disable reviews on products
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );

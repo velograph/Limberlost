@@ -1,37 +1,37 @@
 <?php
 
-function create_trips_custom_post_type() {
+function create_trip_custom_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Trips', 'Post Type General Name', 'limberlost' ),
-		'singular_name'         => _x( 'Trip', 'Post Type Singular Name', 'limberlost' ),
-		'menu_name'             => __( 'Trips', 'limberlost' ),
-		'name_admin_bar'        => __( 'Trip', 'limberlost' ),
-		'archives'              => __( 'Trip Archives', 'limberlost' ),
-		'parent_item_colon'     => __( 'Parent Trip:', 'limberlost' ),
-		'all_items'             => __( 'All Trips', 'limberlost' ),
-		'add_new_item'          => __( 'Add New Trip', 'limberlost' ),
-		'add_new'               => __( 'Add New Trip', 'limberlost' ),
-		'new_item'              => __( 'New Trip', 'limberlost' ),
-		'edit_item'             => __( 'Edit Trip', 'limberlost' ),
-		'update_item'           => __( 'Update Trip', 'limberlost' ),
-		'view_item'             => __( 'View Trip', 'limberlost' ),
-		'search_items'          => __( 'Search Trip', 'limberlost' ),
+		'name'                  => _x( 'Trip Reports', 'Post Type General Name', 'limberlost' ),
+		'singular_name'         => _x( 'Trip Report', 'Post Type Singular Name', 'limberlost' ),
+		'menu_name'             => __( 'Trip Reports', 'limberlost' ),
+		'name_admin_bar'        => __( 'Trip Report', 'limberlost' ),
+		'archives'              => __( 'Trip Report Archives', 'limberlost' ),
+		'parent_item_colon'     => __( 'Parent Trip Report:', 'limberlost' ),
+		'all_items'             => __( 'All Trip Reports', 'limberlost' ),
+		'add_new_item'          => __( 'Add New Trip Report', 'limberlost' ),
+		'add_new'               => __( 'Add New Trip Report', 'limberlost' ),
+		'new_item'              => __( 'New Trip Report', 'limberlost' ),
+		'edit_item'             => __( 'Edit Trip Report', 'limberlost' ),
+		'update_item'           => __( 'Update Trip Report', 'limberlost' ),
+		'view_item'             => __( 'View Trip Report', 'limberlost' ),
+		'search_items'          => __( 'Search Trip Report', 'limberlost' ),
 		'not_found'             => __( 'Not found', 'limberlost' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'limberlost' ),
 		'featured_image'        => __( 'Featured Image', 'limberlost' ),
 		'set_featured_image'    => __( 'Set featured image', 'limberlost' ),
 		'remove_featured_image' => __( 'Remove featured image', 'limberlost' ),
 		'use_featured_image'    => __( 'Use as featured image', 'limberlost' ),
-		'insert_into_item'      => __( 'Insert into Trip', 'limberlost' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this Trip', 'limberlost' ),
+		'insert_into_item'      => __( 'Insert into Trip Report', 'limberlost' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Trip Report', 'limberlost' ),
 		'items_list'            => __( 'Items list', 'limberlost' ),
 		'items_list_navigation' => __( 'Items list navigation', 'limberlost' ),
 		'filter_items_list'     => __( 'Filter items list', 'limberlost' ),
 	);
 	$args = array(
-		'label'                 => __( 'Trip', 'limberlost' ),
-		'description'           => __( 'Exploration Trips', 'limberlost' ),
+		'label'                 => __( 'Trip Report', 'limberlost' ),
+		'description'           => __( 'Exploration Trip Reports', 'limberlost' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'page-attributes', ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
@@ -51,7 +51,7 @@ function create_trips_custom_post_type() {
 	register_post_type( 'trip', $args );
 
 }
-add_action( 'init', 'create_trips_custom_post_type', 0 );
+add_action( 'init', 'create_trip_custom_post_type', 0 );
 
 function create_routes_custom_post_type() {
 
@@ -154,7 +154,7 @@ function create_partnership_custom_post_type() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'Partnership', $args );
+	register_post_type( 'partnership', $args );
 
 }
 add_action( 'init', 'create_partnership_custom_post_type', 0 );
