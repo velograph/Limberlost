@@ -134,6 +134,10 @@ add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
+add_image_size( 'banner-desktop', '1280', '300', 'true' );
+add_image_size( 'banner-retina', '2400', '450', 'true' );
+
+
 // Remove Woo styling
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
