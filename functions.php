@@ -143,3 +143,26 @@ function wcs_woo_remove_reviews_tab($tabs) {
  unset($tabs['reviews']);
  return $tabs;
 }
+
+// Limberlost Logo on login
+function custom_login_logo() {
+	echo '<style type="text/css">
+	.login h1 a {
+		background-image: url('.get_bloginfo('template_directory').'/images/limberlost_login_logo.png) !important;
+		background-size: 150px !important;
+		height: 150px;
+		width: 150px !important;
+	}
+	</style>';
+}
+add_action('login_head', 'custom_login_logo');
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Adventures off the beaten path.';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
