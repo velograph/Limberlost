@@ -14,6 +14,14 @@ get_header(); ?>
 
 	<div class="content-area alternating">
 
+		<section>
+
+			icon
+
+			<?php the_field('section_description', 2102); ?>
+
+		</section>
+
 		<?php
 
 		$oddpost = 'alternated';
