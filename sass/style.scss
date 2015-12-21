@@ -27,14 +27,6 @@ body {
 		height: auto;
 		float: left;
 	}
-	.section-portal {
-		.section-content {
-			// left: 50%;
-			// position: absolute;
-			// top: 50%;
-			// @include transform(translate(-50%,-50%));
-		}
-	}
 }
 
 .alternating {
@@ -87,10 +79,10 @@ body {
 				}
 			}
 		}
-	}
-	.related-posts {
-		.section-portal {
-			@include span-columns(2);
+		.related-posts {
+			.section-portal {
+				@include span-columns(2);
+			}
 		}
 	}
 }
