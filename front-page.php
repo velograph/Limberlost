@@ -103,14 +103,14 @@ get_header(); ?>
 
 			<div class="section-supporting">
 
-				<div>
+				<div class="section-content">
 					<img class="section-icon" src="<?php the_field('section_icon', 2060); ?>" alt="exploration" />
+
+					<h1>1. Exploration</h1>
+
+					<?php the_field('section_description', 2060); ?>
+					<a href="/exploration"><?php the_field('homepage_link_text', 2060); ?></a>
 				</div>
-
-				<h1>1. Exploration</h1>
-
-				<?php the_field('section_description', 2060); ?>
-				<a href="/exploration"><?php the_field('homepage_link_text', 2060); ?></a>
 
 			</div>
 

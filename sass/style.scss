@@ -45,12 +45,17 @@ body {
 	}
 	.exploration {
 		background: $light-gray;
+		position: relative;
 		.section-portal,
 		.section-supporting {
 			@include span-columns(6);
 		}
 		.section-supporting {
-			vertical-align: middle;
+			.section-content {
+				position: absolute;
+				top: 50%;
+				@include transform(translateY(-50%));
+			}
 		}
 		.exploration-slider {
 			.slick-slide {
