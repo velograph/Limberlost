@@ -135,7 +135,7 @@ add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
 add_image_size( 'banner-desktop', '1280', '300', 'true' );
-add_image_size( 'banner-retina', '2400', '450', 'true' );
+add_image_size( 'banner-retina', '2400', '650', 'true' );
 
 
 // Remove Woo styling
