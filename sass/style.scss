@@ -68,6 +68,32 @@ body {
 					text-transform: uppercase;
 				}
 			}
+			ul.slick-dots {
+				bottom: $fifteen;
+				position: absolute;
+				right: $fifteen;
+				li {
+					display: inline-block;
+					margin-left: $five;
+					button {
+						background: $medium-gray;
+						border: 1px solid transparent;
+						@include border-top-radius(10px);
+						@include border-right-radius(10px);
+						@include border-bottom-radius(10px);
+						@include border-left-radius(10px);
+						height: $ten;
+						padding: 0;
+						text-indent: -99999px;
+						width: $ten;
+					}
+					&.slick-active {
+						button {
+							background: $light-gray;
+						}
+					}
+				}
+			}
 		}
 	}
 	.outfitting {
