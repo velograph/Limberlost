@@ -23,6 +23,7 @@
 @import "outfitting";
 @import "expeditions";
 @import "partnerships";
+@import "footer";
 
 body {
 	margin: 0;
@@ -30,5 +31,78 @@ body {
 	img {
 		height: auto;
 		float: left;
+	}
+	.content-area {
+		img.section-icon {
+			max-width: $seventyfive;
+		}
+	}
+}
+
+.front-page {
+	.section {
+		@include row();
+	}
+	.exploration {
+		background: $light-gray;
+		.section-portal,
+		.section-supporting {
+			@include span-columns(6);
+		}
+		.section-supporting {
+			vertical-align: middle;
+		}
+		.exploration-slider {
+			.slick-slide {
+				position: relative;
+			}
+			.slide-caption {
+				bottom: $twentyfive;
+				color: $white;
+				left: 50%;
+				position: absolute;
+				width: 100%;
+				@include transform(translateX(-50%));
+				.post-type {
+					color: $mustard;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	.outfitting {
+		.outfitting-slider {
+			@include outer-container;
+			.product-portal {
+				margin: $twentyfive;
+				text-align: center;
+				h3 {
+					clear: both;
+				}
+			}
+		}
+	}
+	.expeditions {
+		.section-portal,
+		.section-supporting {
+			@include span-columns(6, table);
+		}
+		.section-supporting {
+			background: $light-gray;
+			vertical-align: middle;
+		}
+	}
+	.partnerships {
+		.section-portal,
+		.section-supporting {
+			@include span-columns(6, table);
+		}
+		.section-supporting {
+			background: $light-gray;
+			vertical-align: middle;
+			img {
+				max-width: $hundred;
+			}
+		}
 	}
 }
