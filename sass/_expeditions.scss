@@ -1,0 +1,15 @@
+.even-alternating {
+	.even-row,
+	.odd-row {
+		@include row();
+		.section-portal,
+		.section-supporting {
+			@include media( $large-screen ) {
+				@include span-columns(6, table);
+			}
+		}
+		.section-portal {
+			vertical-align: middle;
+		}
+	}
+}

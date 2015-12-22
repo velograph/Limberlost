@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Expeditions
+ * Template Name: Partnerships
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -12,13 +12,13 @@
 
 get_header(); ?>
 
-	<div class="content-area expeditions even-alternating">
+	<div class="content-area partnerships offset-alternating">
 
 		<section>
 
 			icon
 
-			<?php the_field('section_description', 2102); ?>
+			<?php the_field('section_description', 2104); ?>
 
 		</section>
 
@@ -27,15 +27,8 @@ get_header(); ?>
 		$oddpost = 'odd-row';
 
 	    $args = array(
-	        'post_type' => 'product',
-			'posts_per_page' => 2,
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'guided-expedition',
-				),
-			),
+	        'post_type' => 'partnership',
+			'posts_per_page' => 4,
 	    );
 	    $query = new WP_Query($args);
 
@@ -53,9 +46,14 @@ get_header(); ?>
 
 							<div class="section-content">
 
-								<h1><?php the_title() ?></h1>
-								<?php the_excerpt(); ?>
-								<a href="<?php the_permalink(); ?>">Learn More</a>
+								<div>
+									<img src="<?php the_field('company_logo'); ?>" alt="company_logo"/>
+								</div>
+								<div class="">
+									<h1><?php the_title() ?></h1>
+									<?php the_excerpt(); ?>
+									<a href="<?php the_permalink(); ?>">View Case Study ></a>
+								</div>
 
 							</div>
 
@@ -125,9 +123,14 @@ get_header(); ?>
 
 							<div class="section-content">
 
-								<h1><?php the_title() ?></h1>
-								<?php the_excerpt(); ?>
-								<a href="<?php the_permalink(); ?>">Learn More</a>
+								<div>
+									<img src="<?php the_field('company_logo'); ?>" alt="company_logo"/>
+								</div>
+								<div class="">
+									<h1><?php the_title() ?></h1>
+									<?php the_excerpt(); ?>
+									<a href="<?php the_permalink(); ?>">View Case Study ></a>
+								</div>
 
 							</div>
 
@@ -145,6 +148,10 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 		<?php endif; ?>
+
+		<section class="partner-contact-form">
+
+			gravity form
 
 		</section>
 
