@@ -1,0 +1,115 @@
+.site-header {
+	@include row();
+	background: $slate;
+	position: fixed;
+	width: 100%;
+	z-index: 9;
+	.site-branding {
+		@include span-columns(9);
+		text-align: center;
+		.site-title {
+			@include span-columns(2);
+			@include shift(7);
+			svg {
+				padding: $ten 0;
+				vertical-align: middle;
+				path {
+					fill: $white;
+				}
+			}
+		}
+	}
+	.main-navigation {
+		@include span-columns(3);
+		.menu {
+			@include row();
+			.menu-item {
+				@include span-columns(3);
+				@include omega;
+				float: right;
+				position: relative;
+				a {
+					svg {
+						left: 50%;
+						position: absolute;
+						top: 50%;
+						width: 75%;
+						@include transform(translate(-50%,-50%));
+					}
+				}
+			}
+			.exploration {
+				background-color: $light-gray;
+				path {
+					fill: $medium-gray;
+				}
+			}
+			.outfitting {
+				background-color: $persimmon;
+				path {
+					fill: $light-gray;
+				}
+			}
+			.expeditions {
+				background-color: $mustard;
+				path {
+					fill: $light-gray;
+				}
+			}
+			.partnerships {
+				background-color: $blue;
+				path {
+					fill: $medium-gray;
+				}
+			}
+		}
+	}
+}
+
+.secondary-navigation {
+	.menu {
+		height: 43px;
+		position: relative;
+		width: 100%;
+		.menu-item {
+			left: 50%;
+			padding: $ten 0;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			width: 100%;
+			@include transform(translate(-50%,-50%));
+			a {
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			&.current-menu-item {
+				z-index: 9;
+			}
+		}
+		.exploration {
+			background-color: $light-gray;
+			a {
+				color: $medium-gray;
+			}
+		}
+		.outfitting {
+			background-color: $persimmon;
+			a {
+				color: $light-gray;
+			}
+		}
+		.expeditions {
+			background-color: $mustard;
+			a {
+				color: $light-gray;
+			}
+		}
+		.partnerships {
+			background-color: $blue;
+			a {
+				color: $medium-gray;
+			}
+		}
+	}
+}

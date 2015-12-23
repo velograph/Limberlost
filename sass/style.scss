@@ -19,6 +19,7 @@
 
 @import "variables";
 @import "slick";
+@import "header";
 @import "explorations";
 @import "outfitting";
 @import "expeditions";
@@ -28,6 +29,11 @@
 body {
 	margin: 0;
 	padding: 0;
+	.skip-link {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute;
+		text-indent: -9999px;
+	}
 	img {
 		height: auto;
 		float: left;
