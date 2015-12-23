@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 	header_height = jQuery('.site-header').height();
 
 	jQuery('.main-navigation .menu-item').css('height',header_height);
-	jQuery('.secondary-navigation').css('display','none');
+	jQuery('.home .secondary-navigation').css('display','none');
 	jQuery('.secondary-navigation').css('padding-top',header_height);
 	// jQuery('.secondary-navigation .menu-item').css('top',header_height);
 
@@ -35,18 +35,22 @@ jQuery(document).ready(function(){
 		jQuery('.secondary-navigation').css('display', 'block');
 	});
 	jQuery('.main-navigation .menu-item.exploration').hover(function() {
+		jQuery('.secondary-navigation .menu-item').removeClass('current-menu-item');
 		jQuery('.secondary-navigation .menu-item.exploration').toggleClass('current-menu-item');
 	});
 
 	jQuery('.main-navigation .menu-item.outfitting').hover(function() {
+		jQuery('.secondary-navigation .menu-item').removeClass('current-menu-item');
 		jQuery('.secondary-navigation .menu-item.outfitting').toggleClass('current-menu-item');
 	});
 
 	jQuery('.main-navigation .menu-item.expeditions').hover(function() {
+		jQuery('.secondary-navigation .menu-item').removeClass('current-menu-item');
 		jQuery('.secondary-navigation .menu-item.expeditions').toggleClass('current-menu-item');
 	});
 
 	jQuery('.main-navigation .menu-item.partnerships').hover(function() {
+		jQuery('.secondary-navigation .menu-item').removeClass('current-menu-item');
 		jQuery('.secondary-navigation .menu-item.partnerships').toggleClass('current-menu-item');
 	});
 
