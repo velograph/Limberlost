@@ -38,11 +38,6 @@ body {
 		height: auto;
 		float: left;
 	}
-	.content-area {
-		img.section-icon {
-			max-width: $seventyfive;
-		}
-	}
 }
 
 .front-page {
@@ -54,13 +49,37 @@ body {
 		position: relative;
 		.section-portal,
 		.section-supporting {
-			@include span-columns(6);
+			@include media( $large-screen ) {
+				float: left;
+				width: 50%;
+			}
 		}
 		.section-supporting {
-			.section-content {
-				position: absolute;
-				top: 50%;
-				@include transform(translateY(-50%));
+ 			.section-content {
+				@include media( $large-screen ) {
+					margin-left: $fifty;
+					position: absolute;
+					top: 50%;
+					@include transform(translateY(-50%));
+				}
+				.section-icon {
+					@include row();
+					margin-bottom: $fifteen;
+					img {
+						max-width: $thirty;
+					}
+				}
+				.section-title {
+					@include row();
+					margin-bottom: $twenty;
+				}
+				.section-description {
+					@include row();
+					a {
+						color: $slate;
+						font-weight: 700;
+					}
+				}
 			}
 		}
 		.exploration-slider {
@@ -108,13 +127,38 @@ body {
 		}
 	}
 	.outfitting {
-		.outfitting-slider {
-			@include outer-container;
-			.product-portal {
-				margin: $twentyfive;
-				text-align: center;
-				h3 {
-					clear: both;
+		padding-top: $fifty;
+		.section-supporting {
+			.section-content {
+				@include outer-container;
+				.section-icon-title {
+					@include span-columns(6);
+					text-align: left;
+					img {
+						margin-right: $thirty;
+						max-width: 30px;
+					}
+				}
+				.section-description {
+					@include span-columns(6);
+					text-align: right;
+					a {
+						color: $slate;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+		.section-portal {
+			overflow: hidden;
+			.outfitting-slider {
+				@include row();
+				.product-portal {
+					margin: $twentyfive $twentyfive $fifty;
+					text-align: center;
+					h3 {
+						clear: both;
+					}
 				}
 			}
 		}
@@ -124,9 +168,36 @@ body {
 		.section-supporting {
 			@include span-columns(6, table);
 		}
+		.section-portal {
+		}
 		.section-supporting {
 			background: $light-gray;
 			vertical-align: middle;
+			.section-content {
+				margin-right: $fifty;
+				text-align: right;
+				.section-icon {
+					@include row();
+					margin-bottom: $fifteen;
+					img {
+						float: right;
+						max-width: 50px;
+					}
+				}
+				.section-title {
+					@include row();
+					margin-bottom: $twenty;
+				}
+				.section-description {
+					@include row();
+					float: right;
+					width: 75%;
+					a {
+						color: $slate;
+						font-weight: 700;
+					}
+				}
+			}
 		}
 	}
 	.partnerships {
@@ -137,8 +208,32 @@ body {
 		.section-supporting {
 			background: $light-gray;
 			vertical-align: middle;
-			img {
-				max-width: $hundred;
+			.section-content {
+				margin-left: $fifty;
+				.section-icon {
+					@include row();
+					margin-bottom: $fifteen;
+					img {
+						max-width: $fifty;
+					}
+				}
+				.section-title {
+					@include row();
+					margin-bottom: $twenty;
+				}
+				.section-description {
+					@include row();
+					margin-bottom: $fifty;
+					a {
+						color: $slate;
+						font-weight: 700;
+					}
+				}
+				.partner-logos {
+					img {
+						max-width: $hundred;
+					}
+				}
 			}
 		}
 	}

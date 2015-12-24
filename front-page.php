@@ -29,11 +29,11 @@ get_header(); ?>
 		jQuery('.outfitting-slider').slick({
 			arrows: true,
 			dots: false,
-			slidesToShow: 5,
+			slidesToShow: 4,
 			autoplay: false,
-			centered: true,
+			centerMode: true,
 			mobileFirst: true,
-		    lazyLoad: 'ondemand',
+		    // lazyLoad: 'ondemand',
 		});
 
 	});
@@ -104,12 +104,18 @@ get_header(); ?>
 			<div class="section-supporting">
 
 				<div class="section-content">
-					<img class="section-icon" src="<?php the_field('section_icon', 2060); ?>" alt="exploration" />
+					<div class="section-icon">
+						<img src="<?php the_field('section_icon', 2060); ?>" alt="exploration" />
+					</div>
 
-					<h1>1. Exploration</h1>
+					<div class="section-title">
+						<h1>1. Exploration</h1>
+					</div>
 
-					<?php the_field('section_description', 2060); ?>
-					<a href="/exploration"><?php the_field('homepage_link_text', 2060); ?></a>
+					<div class="section-description">
+						<?php the_field('section_description', 2060); ?>
+						<a href="/exploration"><?php the_field('homepage_link_text', 2060); ?></a>
+					</div>
 				</div>
 
 			</div>
@@ -118,50 +124,64 @@ get_header(); ?>
 
 		<section class="outfitting section">
 
-			<?php the_field('section_description', 2100); ?>
-			<?php the_field('homepage_link_text', 2100); ?>
+			<div class="section-supporting">
 
-			<img class="section-icon" src="<?php the_field('section_icon', 2100); ?>" alt="exploration" />
+				<div class="section-content">
 
-			<h1>2. Outfitting</h1>
+					<div class="section-description">
+						<?php the_field('section_description', 2100); ?>
+						<?php the_field('homepage_link_text', 2100); ?>
+					</div>
 
-			<?php
-
-				$args = array(
-					'post_type' => array('product'),
-					'posts_per_page' => 5,
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'product_cat',
-							'field' => 'slug',
-							'terms' => 'guided-expedition',
-							'operator' => 'NOT IN',
-						),
-					),
-				);
-				$query = new WP_Query($args);
-
-				if($query->have_posts()) : ?>
-
-				<div class="outfitting-slider">
-
-					<?php while($query->have_posts()) : ?>
-
-						<?php $query->the_post(); ?>
-
-						<div class="product-portal slide">
-							<div class="product-thumbnail">
-								<?php the_post_thumbnail('portal-tablet'); ?>
-							</div>
-							<h5><?php the_title() ?></h5>
-							<h6>product short description</h6>
-						</div>
-
-					<?php endwhile; ?>
+					<div class="section-icon-title">
+						<img src="<?php the_field('section_icon', 2100); ?>" alt="exploration" />
+						<h1>2. Outfitting</h1>
+					</div>
 
 				</div>
 
-			<?php endif; ?>
+			</div>
+
+			<div class="section-portal">
+				<?php
+
+					$args = array(
+						'post_type' => array('product'),
+						'posts_per_page' => 5,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'product_cat',
+								'field' => 'slug',
+								'terms' => 'guided-expedition',
+								'operator' => 'NOT IN',
+							),
+						),
+					);
+					$query = new WP_Query($args);
+
+					if($query->have_posts()) : ?>
+
+					<div class="outfitting-slider">
+
+						<?php while($query->have_posts()) : ?>
+
+							<?php $query->the_post(); ?>
+
+							<div class="product-portal slide">
+								<div class="product-thumbnail">
+									<?php the_post_thumbnail('portal-tablet'); ?>
+								</div>
+								<h5><?php the_title() ?></h5>
+								<h6>product short description</h6>
+							</div>
+
+						<?php endwhile; ?>
+
+					</div>
+
+				<?php endif; ?>
+
+			</div>
 
 		</section>
 
@@ -169,12 +189,22 @@ get_header(); ?>
 
 			<div class="section-supporting">
 
-				<img class="section-icon" src="<?php the_field('section_icon', 2102); ?>" alt="exploration" />
+				<div class="section-content">
 
-				<h1>3. Expeditions</h1>
+					<div class="section-icon">
+						<img src="<?php the_field('section_icon', 2102); ?>" alt="exploration" />
+					</div>
 
-				<?php the_field('section_description', 2102); ?>
-				<?php the_field('homepage_link_text', 2102); ?>
+					<div class="section-title">
+						<h1>3. Expeditions</h1>
+					</div>
+
+					<div class="section-description">
+						<?php the_field('section_description', 2102); ?>
+						<a href="/expeditions"><?php the_field('homepage_link_text', 2102); ?></a>
+					</div>
+
+				</div>
 
 			</div>
 
@@ -257,37 +287,46 @@ get_header(); ?>
 
 			<div class="section-supporting">
 
-				<img class="section-icon" src="<?php the_field('section_icon', 2104); ?>" alt="exploration" />
+				<div class="section-content">
 
-				<h1>4. Partnerships</h1>
-
-				<?php the_field('section_description', 2104); ?>
-				<?php the_field('homepage_link_text', 2104); ?>
-
-				<?php
-
-				    $args = array(
-				        'post_type' => 'partnership',
-						'posts_per_page' => 4,
-				    );
-				    $query = new WP_Query($args);
-
-				    if($query->have_posts()) : ?>
-
-					<div class="partner-logos">
-
-					    <?php while($query->have_posts()) : ?>
-
-					        <?php $query->the_post(); ?>
-
-			        		<span><img src="<?php the_field('company_logo'); ?>" alt="partnership_logo" /></span>
-
-				    	<?php endwhile; ?>
-
+					<div class="section-icon">
+						<img src="<?php the_field('section_icon', 2104); ?>" alt="exploration" />
 					</div>
 
-				<?php endif; ?>
+					<div class="section-title">
+						<h1>4. Partnerships</h1>
+					</div>
 
+					<div class="section-description">
+						<?php the_field('section_description', 2104); ?>
+						<a href="/partnerships"><?php the_field('homepage_link_text', 2104); ?></a>
+					</div>
+
+					<?php
+
+					    $args = array(
+					        'post_type' => 'partnership',
+							'posts_per_page' => 4,
+					    );
+					    $query = new WP_Query($args);
+
+					    if($query->have_posts()) : ?>
+
+						<div class="partner-logos">
+
+						    <?php while($query->have_posts()) : ?>
+
+						        <?php $query->the_post(); ?>
+
+				        		<span><img src="<?php the_field('company_logo'); ?>" alt="partnership_logo" /></span>
+
+					    	<?php endwhile; ?>
+
+						</div>
+
+					<?php endif; ?>
+
+				</div>
 
 			</div>
 

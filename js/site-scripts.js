@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 
 	WebFontConfig = {
-		google: { families: [ 'Lora:400,400italic:latin' ] }
+		google: { families: [ 'Lora:400,700,400italic:latin' ] }
 	};
 	(function() {
 		var wf = document.createElement('script');

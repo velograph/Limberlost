@@ -1,9 +1,9 @@
 .site-header {
 	@include row();
 	background: $slate;
-	position: fixed;
-	width: 100%;
-	z-index: 9;
+	// position: fixed;
+	// width: 100%;
+	// z-index: 9;
 	.site-branding {
 		@include span-columns(9);
 		text-align: center;
