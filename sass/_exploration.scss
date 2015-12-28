@@ -1,0 +1,29 @@
+.exploration {
+	.section {
+		@include row();
+		.section-lead-in {
+			.section-icon {
+				text-align: center;
+				svg {
+					max-width: $hundred;
+				}
+			}
+			.section-description {
+				@include span-columns(4);
+				@include shift(4);
+				text-align: center;
+			}
+		}
+	}
+	.section-portal {
+		.featured-route-title {
+			background: $slate;
+			color: $mustard;
+			padding: $five $ten;
+		}
+		a {
+			color: $slate;
+			font-weight: 700;
+		}
+	}
+}
