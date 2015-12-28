@@ -47,8 +47,15 @@ get_header(); ?>
 				<?php
 
 				    $args = array(
-				        'post_type' => array('trip', 'route'),
+				        'post_type' => 'post',
 						'posts_per_page' => 5,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'category',
+								'field' => 'slug',
+								'terms' => array('reports','gear','routes'),
+							),
+						),
 				    );
 				    $query = new WP_Query($args);
 
@@ -86,9 +93,23 @@ get_header(); ?>
 								</picture>
 
 								<div class="slide-caption">
+									<?php
+									$terms = get_the_terms( $post->ID, 'category' );
+
+										$exploration_links = array();
+
+										foreach ( $terms as $term ) {
+											$exploration_links[] = $term->name;
+										}
+
+										$exploration_category = join( ", ", $exploration_links );
+									?>
+
 									<?php $post_type = get_post_type_object( get_post_type($post) ); ?>
-									<span class="post-type"><?php echo $post_type->labels->singular_name; ?>:&nbsp;</span>
-									<span class="post-title"><?php the_title() ?>&nbsp;&gt;</span>
+									<a href="<?php the_permalink(); ?>">
+										<span class="post-type"><?php echo $exploration_category; ?>:&nbsp;</span>
+										<span class="post-title"><?php the_title() ?>&nbsp;&gt;</span>
+									</a>
 								</div>
 
 							</div>
@@ -109,7 +130,7 @@ get_header(); ?>
 					</div>
 
 					<div class="section-title">
-						<h1>1. Exploration</h1>
+						<h1>Exploration</h1>
 					</div>
 
 					<div class="section-description">
@@ -122,7 +143,7 @@ get_header(); ?>
 
 		</section>
 
-		<section class="outfitting section">
+		<!-- <section class="outfitting section">
 
 			<div class="section-supporting">
 
@@ -183,7 +204,7 @@ get_header(); ?>
 
 			</div>
 
-		</section>
+		</section> -->
 
 		<section class="expeditions section">
 
@@ -196,7 +217,7 @@ get_header(); ?>
 					</div>
 
 					<div class="section-title">
-						<h1>3. Expeditions</h1>
+						<h1>Expeditions</h1>
 					</div>
 
 					<div class="section-description">
@@ -294,7 +315,7 @@ get_header(); ?>
 					</div>
 
 					<div class="section-title">
-						<h1>4. Partnerships</h1>
+						<h1>Partnerships</h1>
 					</div>
 
 					<div class="section-description">

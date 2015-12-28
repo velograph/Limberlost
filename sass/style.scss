@@ -96,6 +96,17 @@ body {
 				.post-type {
 					color: $mustard;
 					text-transform: uppercase;
+					&:hover {
+						color: $white;
+						text-decoration: underline;
+					}
+				}
+				.post-title {
+					color: $white;
+					&:hover {
+						color: $white;
+						text-decoration: underline;
+					}
 				}
 			}
 			ul.slick-dots {
