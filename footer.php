@@ -8,7 +8,6 @@
  */
 ?>
 
-	</div><!-- #content -->
 
 	<section class="mailing-list section">
 
