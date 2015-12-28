@@ -33,5 +33,3 @@
 			</h1>
 		</div><!-- .site-branding -->
 	</header>
-
-	<div id="content" class="site-content">
