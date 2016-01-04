@@ -63,6 +63,7 @@
 			text-transform: uppercase;
 		}
 		.exploration-title {
+			clear: both;
 			margin-bottom: $fifty;
 			text-align: center;
 		}
@@ -145,7 +146,7 @@
 				}
 			}
 		}
-		.route-content {
+		.exploration-content {
 			@include span-columns(10);
 			@include shift(1);
 			@include media( $large-screen ) {
