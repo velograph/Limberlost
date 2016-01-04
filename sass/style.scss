@@ -64,6 +64,7 @@ body {
 			}
 		}
 		.section-supporting {
+			padding: $twentyfive;
  			.section-content {
 				@include media( $large-screen ) {
 					margin-left: $fifty;
@@ -169,26 +170,39 @@ body {
 		}
 	}
 	.expeditions {
+		display: flex;
+		flex-flow: column-reverse;
+		@include media( $large-screen ) {
+			display: block;
+			flex-flow: column;
+		}
 		.section-portal,
 		.section-supporting {
-			@include span-columns(6, table);
+			@include media( $large-screen ) {
+				@include span-columns(6, table);
+			}
 		}
 		.section-portal {
 		}
 		.section-supporting {
 			background: $light-gray;
 			vertical-align: middle;
+			padding: $twentyfive;
 			.section-content {
-				margin-right: $fifty;
-				text-align: right;
+				@include media( $large-screen ) {
+					margin-right: $fifty;
+					text-align: right;
+				}
 				.section-title {
 					@include row();
 					margin-bottom: $twenty;
 				}
 				.section-description {
 					@include row();
-					float: right;
 					width: 75%;
+					@include media( $large-screen ) {
+						float: right;
+					}
 					a {
 						color: $slate;
 						font-weight: 700;
@@ -200,13 +214,23 @@ body {
 	.partnerships {
 		.section-portal,
 		.section-supporting {
-			@include span-columns(6, table);
+			@include media( $large-screen ) {
+				@include span-columns(6, table);
+			}
 		}
 		.section-supporting {
 			background: $light-gray;
+			clear: both;
+			margin-bottom: $hundred;
+			padding: $twentyfive;
 			vertical-align: middle;
+			@include media( $large-screen ) {
+				margin-bottom: 0;
+			}
 			.section-content {
-				margin-left: $fifty;
+				@include media( $large-screen ) {
+					margin-left: $fifty;
+				}
 				.section-title {
 					@include row();
 					margin-bottom: $twenty;
@@ -220,8 +244,8 @@ body {
 					}
 				}
 				.partner-logos {
-					img {
-						max-width: $hundred;
+					.partner-logo {
+						@include span-columns(3);
 					}
 				}
 			}
