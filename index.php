@@ -44,9 +44,11 @@ get_header(); ?>
 
 		$oddpost = 'odd-row';
 
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	    $args = array(
 	        'post_type' => 'post',
 			'posts_per_page' => 5,
+			'paged' => $paged,
 	    );
 	    $query = new WP_Query($args);
 
@@ -58,7 +60,7 @@ get_header(); ?>
 
 				<?php if ($query->current_post % 2 == 0): ?>
 
-					<section class="<?php echo $oddpost; ?>">
+					<section class="entry <?php echo $oddpost; ?>">
 
 						<?php if( has_term('routes','category') ) : ?>
 							<div class="section-portal route-map" style="background-image: url('<?php the_field('map_image'); ?>');">
@@ -109,7 +111,7 @@ get_header(); ?>
 
 				<?php else: ?>
 
-					<section class="<?php echo $oddpost; ?>">
+					<section class="entry <?php echo $oddpost; ?>">
 
 						<div class="section-supporting">
 
@@ -169,6 +171,11 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-	</div><!-- #primary -->
+		<div class="post-navigation">
+			<div class="older"><?php next_posts_link( '&laquo; Older', '' ); ?></div>
+			<div class="newer"><?php previous_posts_link( 'Newer &raquo;' ); ?></div>
+		</div>
+
+	</div>
 
 <?php get_footer(); ?>

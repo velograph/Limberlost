@@ -261,6 +261,7 @@ body {
 	.odd-row {
 		@include row();
 		.section-portal {
+			padding: $twentyfive;
 			@include media( $large-screen ) {
 				@include span-columns(5, table);
 				vertical-align: middle;
@@ -276,14 +277,42 @@ body {
 			}
 		}
 	}
+	.entry:last-of-type {
+		margin-bottom: $hundred;
+		@include media( $large-screen ) {
+			margin-bottom: 0;
+		}
+	}
 	.odd-row {
 		.section-portal {
-			text-align: right;
+			@include media( $large-screen ) {
+				text-align: right;
+			}
 		}
 	}
 	.even-row {
+		display: flex;
+		flex-flow: column-reverse;
+		@include media( $large-screen ) {
+			display: block;
+			flex-flow: column;
+		}
 		.section-portal {
 			text-align: left;
+		}
+	}
+	.post-navigation {
+		@include row();
+		padding: 0 $twentyfive $fifty;
+		a {
+			color: $slate;
+		}
+		.older {
+			@include span-columns(6);
+		}
+		.newer {
+			@include span-columns(6);
+			text-align: right;
 		}
 	}
 }
