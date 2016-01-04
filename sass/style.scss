@@ -38,6 +38,9 @@ body {
 		height: auto;
 		float: left;
 	}
+	input {
+		border-radius: 0;
+	}
 	.screen-reader-text,
 	.skip-link {
 		clip: rect(1px, 1px, 1px, 1px);
