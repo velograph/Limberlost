@@ -19,6 +19,7 @@
 		.main-navigation {
 			@include span-columns(5);
 			@include shift(1);
+			@include omega;
 			.menu-primary-container {
 				ul.menu {
 					text-align: center;
@@ -42,7 +43,6 @@
 		.utility-navigation {
 			@include span-columns(3);
 			@include shift(1);
-			@include omega;
 			padding-top: $twentyfive;
 			.search-form {
 				@include span-columns(8);

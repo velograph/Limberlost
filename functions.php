@@ -134,8 +134,9 @@ add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
-add_image_size( 'banner-desktop', '1280', '300', 'true' );
-add_image_size( 'banner-retina', '2400', '650', 'true' );
+add_image_size( 'banner-mobile', '480', '80', 'true' );
+add_image_size( 'banner-desktop', '1280', '210', 'true' );
+add_image_size( 'banner-retina', '2400', '400', 'true' );
 
 
 // Remove Woo styling

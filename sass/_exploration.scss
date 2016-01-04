@@ -10,7 +10,11 @@
 				}
 			}
 			.exploration-taxonomies {
-				@include outer-container;
+				display: none;
+				@include media( $medium-screen ) {
+					display: block;
+					@include outer-container;
+				}
 				.taxonomy {
 					@include span-columns(3);
 					h3 {
@@ -39,6 +43,133 @@
 		a {
 			color: $slate;
 			font-weight: 700;
+		}
+	}
+}
+
+.single-exploration {
+	.content-area {
+		@include outer-container;
+		.exploration-term {
+			@include span-columns(8);
+			@include shift(2);
+			background: $slate;
+			color: $white;
+			font-weight: 700;
+			margin-bottom: $fifteen;
+			margin-top: $fifty;
+			padding: $ten 0;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.exploration-title {
+			margin-bottom: $fifty;
+			text-align: center;
+		}
+		.exploration-section  {
+			margin-bottom: $fifty;
+		}
+		.gallery-container {
+			@include row();
+			.main-image {
+				@include span-columns(10);
+				@include shift(1);
+				margin-bottom: 2.35765%;
+				@include media( $large-screen ) {
+					@include span-columns(8);
+					@include shift(2);
+					margin-bottom: 0;
+				}
+			}
+			.image-thumbs {
+				@include span-columns(10);
+				@include shift(1);
+				@include media( $large-screen ) {
+					@include span-columns(2);
+				}
+				img {
+					@include span-columns(2);
+					@include omega(6n);
+					margin-bottom: 2.35765%;
+					@include media( $large-screen ) {
+						@include span-columns(4);
+						@include omega(3n);
+					}
+				}
+			}
+		}
+		.list-callout  {
+			padding: $twentyfive;
+			h4 {
+				margin-bottom: $twenty;
+			}
+			ul {
+				li {
+					list-style-type: disc;
+					margin: 0 0 $fifteen $twenty;
+				}
+			}
+		}
+		.details-intro {
+			@include row();
+			.route-details {
+				background: $slate;
+				color: $white;
+				@include span-columns(10);
+				@include shift(1);
+				margin-bottom: $twentyfive;
+				@include media( $large-screen ) {
+					@include span-columns(4);
+					@include shift(2);
+					margin-bottom: 0;
+				}
+			}
+			.route-intro {
+				font-size: $h4-font-size;
+				@include span-columns(10);
+				@include shift(1);
+				@include media( $large-screen ) {
+					@include span-columns(4);
+				}
+			}
+		}
+		.rwgps-embed-row {
+			@include row();
+			.rwgps-embed {
+				@include span-columns(10);
+				@include shift(1);
+				@include media( $large-screen ) {
+					@include span-columns(8);
+					@include shift(2);
+				}
+			}
+		}
+		.route-content {
+			@include span-columns(10);
+			@include shift(1);
+			@include media( $large-screen ) {
+				@include span-columns(6);
+				@include shift(3);
+			}
+		}
+		.pullquote {
+			@include span-columns(8);
+			@include shift(2);
+			color: $medium-gray;
+			font-style: italic;
+			font-size: $h3-font-size;
+			text-align: center;
+		}
+		.need-to-knows {
+			@include span-columns(10);
+			@include shift(1);
+			background: $slate;
+			color: $white;
+			margin-bottom: $hundred;
+			@include media( $large-screen ) {
+				@include span-columns(4);
+				@include shift(4);
+			}
 		}
 	}
 }
