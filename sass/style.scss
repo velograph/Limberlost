@@ -38,6 +38,12 @@ body {
 		height: auto;
 		float: left;
 	}
+	.screen-reader-text,
+	.skip-link {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute;
+		text-indent: -9999px;
+	}
 }
 
 .front-page {

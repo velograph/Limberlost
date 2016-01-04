@@ -1,17 +1,74 @@
 .site-header {
 	@include row();
 	background: $slate;
-	.site-branding {
-		@include span-columns(9);
-		text-align: center;
-		.site-title {
+	.inner-container {
+		@include outer-container(1180px);
+		position: relative;
+		.site-branding {
 			@include span-columns(2);
-			@include shift(7);
-			svg {
-				padding: $ten 0;
-				vertical-align: middle;
-				path {
-					fill: $white;
+			.site-title {
+				svg {
+					padding: $ten 0;
+					vertical-align: middle;
+					path {
+						fill: $white;
+					}
+				}
+			}
+		}
+		.main-navigation {
+			@include span-columns(5);
+			@include shift(1);
+			.menu-primary-container {
+				ul.menu {
+					text-align: center;
+					.menu-item {
+						@include span-columns(3);
+						padding-top: $thirty;
+						a {
+							text-transform: uppercase;
+							color: $white;
+							&:hover {
+								color: $medium-gray;
+							}
+						}
+						&.current_page_item {
+							border-top: 3px solid $white;
+						}
+					}
+				}
+			}
+		}
+		.utility-navigation {
+			@include span-columns(3);
+			@include shift(1);
+			@include omega;
+			padding-top: $twentyfive;
+			.search-form {
+				@include span-columns(8);
+				.search-field {
+					background: $black;
+					border: none;
+					color: $white;
+					font-size: 12px;
+					font-style: italic;
+				}
+				.search-submit {
+					display: none;
+				}
+			}
+			.utility-link {
+				@include span-columns(2);
+				text-align: right;
+				svg {
+					max-width: $fifteen;
+					vertical-align: middle;
+					path {
+						fill: $light-gray;
+					}
+				}
+				a {
+					color: $white;
 				}
 			}
 		}
