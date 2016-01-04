@@ -2,16 +2,31 @@
 	.section {
 		@include row();
 		.section-lead-in {
-			.section-icon {
+			padding: $fifty 0;
+			.section-title {
 				text-align: center;
-				svg {
-					max-width: $hundred;
+				h1 {
+					margin-bottom: $twentyfive;
 				}
 			}
-			.section-description {
-				@include span-columns(4);
-				@include shift(4);
-				text-align: center;
+			.exploration-taxonomies {
+				@include outer-container;
+				.taxonomy {
+					@include span-columns(3);
+					h3 {
+						color: $slate;
+						margin-bottom: $twenty;
+					}
+					.read-more-link {
+						display: block;
+						color: $black;
+						font-weight: 700;
+						margin-top: $ten;
+					}
+					&:first-of-type {
+						@include shift(2);
+					}
+				}
 			}
 		}
 	}
