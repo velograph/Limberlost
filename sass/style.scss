@@ -71,13 +71,6 @@ body {
 					top: 50%;
 					@include transform(translateY(-50%));
 				}
-				.section-icon {
-					@include row();
-					margin-bottom: $fifteen;
-					img {
-						max-width: $thirty;
-					}
-				}
 				.section-title {
 					@include row();
 					margin-bottom: $twenty;
@@ -151,14 +144,6 @@ body {
 		.section-supporting {
 			.section-content {
 				@include outer-container;
-				.section-icon-title {
-					@include span-columns(6);
-					text-align: left;
-					img {
-						margin-right: $thirty;
-						max-width: 30px;
-					}
-				}
 				.section-description {
 					@include span-columns(6);
 					text-align: right;
@@ -196,14 +181,6 @@ body {
 			.section-content {
 				margin-right: $fifty;
 				text-align: right;
-				.section-icon {
-					@include row();
-					margin-bottom: $fifteen;
-					img {
-						float: right;
-						max-width: 50px;
-					}
-				}
 				.section-title {
 					@include row();
 					margin-bottom: $twenty;
@@ -230,13 +207,6 @@ body {
 			vertical-align: middle;
 			.section-content {
 				margin-left: $fifty;
-				.section-icon {
-					@include row();
-					margin-bottom: $fifteen;
-					img {
-						max-width: $fifty;
-					}
-				}
 				.section-title {
 					@include row();
 					margin-bottom: $twenty;

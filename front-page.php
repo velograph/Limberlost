@@ -125,10 +125,6 @@ get_header(); ?>
 			<div class="section-supporting">
 
 				<div class="section-content">
-					<div class="section-icon">
-						<img src="<?php the_field('section_icon', 2060); ?>" alt="exploration" />
-					</div>
-
 					<div class="section-title">
 						<h1>Exploration</h1>
 					</div>
@@ -211,10 +207,6 @@ get_header(); ?>
 			<div class="section-supporting">
 
 				<div class="section-content">
-
-					<div class="section-icon">
-						<img src="<?php the_field('section_icon', 2102); ?>" alt="exploration" />
-					</div>
 
 					<div class="section-title">
 						<h1>Expeditions</h1>
@@ -309,10 +301,6 @@ get_header(); ?>
 			<div class="section-supporting">
 
 				<div class="section-content">
-
-					<div class="section-icon">
-						<img src="<?php the_field('section_icon', 2104); ?>" alt="exploration" />
-					</div>
 
 					<div class="section-title">
 						<h1>Partnerships</h1>
