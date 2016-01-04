@@ -68,7 +68,7 @@
 				</svg>
 			</div>
 			<div class="footer-section primary-menu">
-				<?php wp_nav_menu( array('theme_location' => 'primary')); ?>
+				<?php wp_nav_menu( array('theme_location' => 'mobile')); ?>
 			</div>
 			<div class="footer-section supporting-menu">
 				<?php wp_nav_menu( array('theme_location' => 'supporting')); ?>

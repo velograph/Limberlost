@@ -33,26 +33,83 @@
 
 .footer-container {
 	background: $light-gray;
-	padding: $hundred 0;
+	padding: $fifty 0 0;
+	@include media( $large-screen ) {
+		padding: $hundred 0;
+	}
 	.footer {
-		@include outer-container;
+		text-align: center;
 		@include media( $large-screen ) {
-			.site-logo {
-				@include span-columns(3);
+			text-align: left;
+		}
+		@include outer-container;
+		.footer-section {
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				margin-bottom: 0;
 			}
-			.primary-menu {
-				@include span-columns(3);
+			a {
+				color: $slate;
+				display: block;
+				margin-bottom: $twentyfive;
+				@include media( $large-screen ) {
+				}
 			}
-			.supporting-menu {
-				@include span-columns(3);
+		}
+		.menu-item {
+			text-transform: uppercase;
+			@include media( $large-screen ) {
+				font-weight: 700;
+				text-transform: none;
 			}
-			.social-media {
+			.sub-menu {
+				@include media( $large-screen ) {
+					display: none;
+				}
+				.menu-item {
+					text-transform: none;
+				}
+			}
+		}
+		.site-logo {
+			@include span-columns(4);
+			@include shift(4);
+			@include media( $large-screen ) {
 				@include span-columns(3);
+				@include shift(0);
+				svg {
+					max-width: 150px;
+				}
+			}
+		}
+		.primary-menu {
+			@include span-columns(6);
+			@include shift(3);
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				@include shift(0);
+			}
+		}
+		.supporting-menu {
+			@include span-columns(6);
+			@include shift(3);
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				@include shift(0);
 			}
 		}
 		.social-media {
+			@include span-columns(6);
+			@include shift(3);
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				@include shift(0);
+			}
 			.social-account {
 				@include span-columns(2);
+				&:first-of-type {
+					@include shift(3);
+				}
 				svg {
 					fill: $slate;
 					max-width: $twentyfive;
