@@ -264,6 +264,7 @@ body {
 	.even-row,
 	.odd-row {
 		@include row();
+		background: $light-gray;
 		.section-portal {
 			padding: $twentyfive;
 			@include media( $large-screen ) {
@@ -307,6 +308,7 @@ body {
 	}
 	.post-navigation {
 		@include row();
+		background: $light-gray;
 		padding: 0 $twentyfive $fifty;
 		a {
 			color: $slate;
