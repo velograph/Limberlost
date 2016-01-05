@@ -244,8 +244,8 @@ get_header(); ?>
 
 						<?php $query->the_post(); ?>
 
-						<?php $mobile = wp_get_attachment_image_src(get_field('tall_trip_banner'), 'banner-mobile'); ?>
-						<?php $retina = wp_get_attachment_image_src(get_field('wide_trip_banner'), 'portal-desktop'); ?>
+						<?php $mobile = wp_get_attachment_image_src(get_field('tall_trip_banner'), 'full'); ?>
+						<?php $retina = wp_get_attachment_image_src(get_field('wide_trip_banner'), 'full'); ?>
 
 						<a href="<?php the_permalink(); ?>">
 							<picture>
@@ -327,7 +327,15 @@ get_header(); ?>
 
 						        <?php $query->the_post(); ?>
 
-				        		<div class="partner-logo"><img src="<?php the_field('company_logo'); ?>" alt="partnership_logo" /></div>
+				        		<div class="partner-logo <?php echo $post->post_name; ?>">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+											$image = get_field('company_logo');
+											$size = 'thumb';
+											echo wp_get_attachment_image( $image, $size );
+										?>
+									</a>
+								</div>
 
 					    	<?php endwhile; ?>
 

@@ -250,6 +250,9 @@ body {
 				.partner-logos {
 					.partner-logo {
 						@include span-columns(3);
+						img {
+							max-width: 100px;
+						}
 					}
 				}
 			}
