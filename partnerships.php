@@ -14,11 +14,19 @@ get_header(); ?>
 
 	<div class="content-area partnerships offset-alternating">
 
-		<section>
+		<section class="section">
 
-			icon
+			<div class="section-lead-in">
 
-			<?php the_field('section_description', 2104); ?>
+				<div class="section-title">
+					<h1><?php the_title(); ?></h1>
+				</div>
+
+				<div class="section-lead-in-description">
+					<?php the_field('section_description', 2104); ?>
+				</div>
+
+			</div>
 
 		</section>
 
@@ -42,23 +50,6 @@ get_header(); ?>
 
 					<section class="<?php echo $oddpost; ?>">
 
-						<div class="section-portal">
-
-							<div class="section-content">
-
-								<div>
-									<img src="<?php the_field('company_logo'); ?>" alt="company_logo"/>
-								</div>
-								<div class="">
-									<h1><?php the_title() ?></h1>
-									<?php the_excerpt(); ?>
-									<a href="<?php the_permalink(); ?>">View Case Study ></a>
-								</div>
-
-							</div>
-
-						</div>
-
 						<div class="section-supporting">
 
 							<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile' ); ?>
@@ -83,6 +74,27 @@ get_header(); ?>
 								<!--[if IE 9]></video><![endif]-->
 								<img srcset="<?php echo $image[0]; ?>">
 							</picture>
+
+						</div>
+
+						<div class="section-portal">
+
+							<div class="section-content">
+
+								<div class="company-logo">
+									<?php
+										$image = get_field('company_logo');
+										$size = 'thumb';
+										echo wp_get_attachment_image( $image, $size );
+									?>
+								</div>
+								<div class="company-name">
+									<h1><?php the_title() ?></h1>
+									<?php the_excerpt(); ?>
+									<a href="<?php the_permalink(); ?>">View Case Study ></a>
+								</div>
+
+							</div>
 
 						</div>
 
@@ -92,6 +104,27 @@ get_header(); ?>
 
 					<section class="<?php echo $oddpost; ?>">
 
+						<div class="section-portal">
+
+							<div class="section-content">
+
+								<div class="company-logo">
+									<?php
+										$image = get_field('company_logo');
+										$size = 'thumb';
+										echo wp_get_attachment_image( $image, $size );
+									?>
+								</div>
+								<div class="company-name">
+									<h1><?php the_title() ?></h1>
+									<?php the_excerpt(); ?>
+									<a href="<?php the_permalink(); ?>">View Case Study ></a>
+								</div>
+
+							</div>
+
+						</div>
+
 						<div class="section-supporting">
 
 							<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile' ); ?>
@@ -116,23 +149,6 @@ get_header(); ?>
 								<!--[if IE 9]></video><![endif]-->
 								<img srcset="<?php echo $image[0]; ?>">
 							</picture>
-
-						</div>
-
-						<div class="section-portal">
-
-							<div class="section-content">
-
-								<div>
-									<img src="<?php the_field('company_logo'); ?>" alt="company_logo"/>
-								</div>
-								<div class="">
-									<h1><?php the_title() ?></h1>
-									<?php the_excerpt(); ?>
-									<a href="<?php the_permalink(); ?>">View Case Study ></a>
-								</div>
-
-							</div>
 
 						</div>
 
@@ -149,12 +165,15 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		<section class="partner-contact-form">
+		<section class="partner-contact-form-container">
 
-			gravity form
+			<div class="partner-contact-form">
+				<h1>Resonate with your Customers</h1>
+				<?php echo do_shortcode('[gravityform id="1" title="false" description="true"]'); ?>
+			</div>
 
 		</section>
 
-	</div><!-- #primary -->
+	</div>
 
 <?php get_footer(); ?>

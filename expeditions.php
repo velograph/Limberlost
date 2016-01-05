@@ -19,7 +19,7 @@ get_header(); ?>
 			<div class="section-lead-in">
 
 				<div class="section-title">
-					<h1>Expeditions</h1>
+					<h1><?php the_title(); ?></h1>
 				</div>
 
 				<div class="section-lead-in-description">

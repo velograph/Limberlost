@@ -130,7 +130,7 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-add_image_size( 'portal-mobile', '480', '480', 'true' );
+add_image_size( 'portal-mobile', '480', '300', 'true' );
 add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );

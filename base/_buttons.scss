@@ -3,6 +3,7 @@ input[type="submit"] {
   @extend %button;
   @include appearance(none);
   border: none;
+  border-radius: 0;
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
