@@ -114,8 +114,12 @@ body {
 			}
 			ul.slick-dots {
 				bottom: $fifteen;
+				display: none !important;
 				position: absolute;
 				right: $fifteen;
+				@include media( $large-screen ) {
+					display: block !important;
+				}
 				li {
 					display: inline-block;
 					margin-left: $five;

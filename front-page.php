@@ -18,7 +18,7 @@ get_header(); ?>
 		jQuery('.exploration-slider').slick({
 			arrows: false,
 			dots: true,
-			autoplay: false,
+			autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
 			centered: true,
