@@ -2,14 +2,40 @@
 	.even-row,
 	.odd-row {
 		@include row();
+		background: $light-gray;
 		.section-portal,
 		.section-supporting {
 			@include media( $large-screen ) {
 				@include span-columns(6, table);
 			}
 		}
+		.section-supporting {
+			img {
+				width: 100%;
+			}
+		}
 		.section-portal {
+			clear: both;
 			vertical-align: middle;
+			.section-content {
+				padding: $fifty;
+				a {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	.even-row {
+		display: flex;
+		flex-flow: column-reverse;
+		@include media( $large-screen ) {
+			display: block;
+			flex-flow: column;
+		}
+		.section-portal {
+			@include media( $large-screen ) {
+				text-align: right;
+			}
 		}
 	}
 }

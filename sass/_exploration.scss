@@ -2,13 +2,6 @@
 	.section {
 		@include row();
 		.section-lead-in {
-			padding: $fifty 0;
-			.section-title {
-				text-align: center;
-				h1 {
-					margin-bottom: $twentyfive;
-				}
-			}
 			.exploration-taxonomies {
 				display: none;
 				@include media( $medium-screen ) {

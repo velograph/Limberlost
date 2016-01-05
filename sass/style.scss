@@ -317,3 +317,24 @@ body {
 		}
 	}
 }
+
+.content-area {
+	.section-lead-in {
+		@include row();
+		padding: $fifty 0;
+		.section-title {
+			text-align: center;
+			h1 {
+				margin-bottom: $twentyfive;
+			}
+		}
+		.section-lead-in-description {
+			@include span-columns(10);
+			@include shift(1);
+			@include media( $large-screen ) {
+				@include span-columns(6);
+				@include shift(3);
+			}
+		}
+	}
+}
