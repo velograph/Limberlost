@@ -10,6 +10,9 @@
 		position: relative;
 		.site-branding {
 			@include span-columns(2);
+			@include media(max-width 1200px) {
+				padding-left: $ten;
+			}
 			.site-title {
 				svg {
 					padding: $ten 0;
@@ -29,6 +32,7 @@
 					text-align: center;
 					.menu-item {
 						@include span-columns(3);
+						border-top: 3px solid $slate;
 						padding-top: $thirty;
 						a {
 							text-transform: uppercase;
@@ -38,7 +42,7 @@
 							}
 						}
 						&.current_page_item {
-							border-top: 3px solid $white;
+							border-top-color: $white;
 						}
 					}
 				}
@@ -47,7 +51,7 @@
 		.utility-navigation {
 			@include span-columns(3);
 			@include shift(1);
-			padding-top: $twentyfive;
+			padding-top: $thirty;
 			.search-form {
 				@include span-columns(8);
 				.search-field {

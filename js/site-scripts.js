@@ -13,7 +13,6 @@ jQuery(document).ready(function(){
 		s.parentNode.insertBefore(wf, s);
 	})();
 
-	jQuery('.mobile-menu-container').hide();
 	jQuery( ".hamburger" ).click(function() {
 		jQuery( ".mobile-menu-container" ).slideToggle( "slow", function() {
 		// Animation complete.
