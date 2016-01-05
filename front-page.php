@@ -126,7 +126,11 @@ get_header(); ?>
 
 				<div class="section-content">
 					<div class="section-title">
-						<h1>Exploration</h1>
+						<h1>
+							<a href="/exploration">
+								Exploration
+							</a>
+						</h1>
 					</div>
 
 					<div class="section-description">
@@ -152,7 +156,11 @@ get_header(); ?>
 
 					<div class="section-icon-title">
 						<img src="<?php the_field('section_icon', 2100); ?>" alt="exploration" />
-						<h1>2. Outfitting</h1>
+						<h1>
+							<a href="<?php the_permalink(); ?>">
+								Outfitting
+							</a>
+						</h1>
 					</div>
 
 				</div>
@@ -186,7 +194,9 @@ get_header(); ?>
 
 							<div class="product-portal slide">
 								<div class="product-thumbnail">
-									<?php the_post_thumbnail('portal-tablet'); ?>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail('portal-tablet'); ?>
+									</a>
 								</div>
 								<h5><?php the_title() ?></h5>
 								<h6>product short description</h6>
@@ -209,7 +219,11 @@ get_header(); ?>
 				<div class="section-content">
 
 					<div class="section-title">
-						<h1>Expeditions</h1>
+						<h1>
+							<a href="/expeditions">
+								Expeditions
+							</a>
+						</h1>
 					</div>
 
 					<div class="section-description">
@@ -278,23 +292,25 @@ get_header(); ?>
 				<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( 2104 ), 'desktop' ); ?>
 				<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( 2104 ), 'retina' ); ?>
 
-				<picture>
-					<!--[if IE 9]><video style="display: none;"><![endif]-->
-					<source
-						srcset="<?php echo $mobile[0]; ?>"
-						media="(max-width: 500px)" />
-					<source
-						srcset="<?php echo $tablet[0]; ?>"
-						media="(max-width: 860px)" />
-					<source
-						srcset="<?php echo $desktop[0]; ?>"
-						media="(max-width: 1180px)" />
-					<source
-						srcset="<?php echo $retina[0]; ?>"
-						media="(min-width: 1181px)" />
-					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $image[0]; ?>">
-				</picture>
+				<a href="/partnerships">
+					<picture>
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(max-width: 1180px)" />
+						<source
+							srcset="<?php echo $retina[0]; ?>"
+							media="(min-width: 1181px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+				</a>
 
 			</div>
 
@@ -303,7 +319,11 @@ get_header(); ?>
 				<div class="section-content">
 
 					<div class="section-title">
-						<h1>Partnerships</h1>
+						<h1>
+							<a href="/partnerships">
+								Partnerships
+							</a>
+						</h1>
 					</div>
 
 					<div class="section-description">
