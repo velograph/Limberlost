@@ -54,10 +54,20 @@
 		@include outer-container;
 	}
 	.column-one {
-		@include span-columns(8);
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(8);
+			@include shift(0);
+		}
 	}
 	.column-two {
-		@include span-columns(4);
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(0);
+		}
 	}
 	h2 {
 		margin-bottom: $fifteen;
