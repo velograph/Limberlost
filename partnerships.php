@@ -84,16 +84,24 @@ get_header(); ?>
 							<div class="section-content">
 
 								<div class="company-logo">
-									<?php
-										$image = get_field('company_logo');
-										$size = 'thumb';
-										echo wp_get_attachment_image( $image, $size );
-									?>
+									<a href="<?php the_permalink(); ?>">
+										<?php
+											$image = get_field('company_logo');
+											$size = 'thumb';
+											echo wp_get_attachment_image( $image, $size );
+										?>
+									</a>
 								</div>
 								<div class="company-name">
-									<h1><?php the_title() ?></h1>
-									<?php the_excerpt(); ?>
-									<a href="<?php the_permalink(); ?>">View Case Study ></a>
+									<h1>
+										<a href="<?php the_permalink(); ?>">
+											<?php the_title() ?>
+										</a>
+									</h1>
+									<div class="excerpt">
+										<?php echo substr(get_the_excerpt(), 0,220); ?>
+									</div>
+									<a class="read-more" href="<?php the_permalink(); ?>">View Case Study ></a>
 								</div>
 
 							</div>
@@ -111,16 +119,23 @@ get_header(); ?>
 							<div class="section-content">
 
 								<div class="company-logo">
-									<?php
-										$image = get_field('company_logo');
-										$size = 'thumb';
-										echo wp_get_attachment_image( $image, $size );
-									?>
+									<a href="<?php the_permalink(); ?>">
+										<?php
+											$image = get_field('company_logo');
+											$size = 'thumb';
+											echo wp_get_attachment_image( $image, $size );
+										?>
+									</a>
 								</div>
 								<div class="company-name">
-									<h1><?php the_title() ?></h1>
-									<?php the_excerpt(); ?>
-									<a href="<?php the_permalink(); ?>">View Case Study ></a>
+									<h1>
+										<a href="<?php the_permalink(); ?>">
+											<?php the_title() ?>
+										</h1>
+									<div class="excerpt">
+										<?php echo substr(get_the_excerpt(), 0,220); ?>
+									</div>
+									<a class="read-more" href="<?php the_permalink(); ?>">View Case Study ></a>
 								</div>
 
 							</div>

@@ -18,8 +18,16 @@ get_header(); ?>
 
 			<div class="section-lead-in">
 
-				<div class="section-title">
-					<h1><?php the_title(); ?></h1>
+				<div class="section-logo">
+					<?php while ( have_posts() ) : the_post(); ?>
+
+						<?php
+							$image = get_field('company_logo');
+							$size = 'thumb';
+							echo wp_get_attachment_image( $image, $size );
+						?>
+
+					<?php endwhile; // end of the loop. ?>
 				</div>
 
 				<div class="section-lead-in-description">

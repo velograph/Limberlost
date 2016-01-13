@@ -40,13 +40,22 @@ body {
 		float: left;
 	}
 	input {
-		border-radius: 0;
+		border-radius: 0 !important;
 	}
 	.screen-reader-text,
 	.skip-link {
 		clip: rect(1px, 1px, 1px, 1px);
 		position: absolute;
 		text-indent: -9999px;
+	}
+	.slide-caption,
+	.wp-caption-text {
+		color: $medium-gray;
+		font-size: 14px;
+		font-style: italic;
+	}
+	.slide-caption {
+		text-align: left;
 	}
 }
 
@@ -65,10 +74,13 @@ body {
 			}
 		}
 		.section-supporting {
-			padding: $twentyfive;
+			padding: $twentyfive $twentyfive $hundred;
+			@include media( $large-screen ) {
+				padding: 0;
+			}
  			.section-content {
 				@include media( $large-screen ) {
-					margin-left: $fifty;
+					padding: $twentyfive;
 					position: absolute;
 					top: 50%;
 					@include transform(translateY(-50%));
@@ -79,6 +91,9 @@ body {
 				}
 				.section-description {
 					@include row();
+					@include media( $large-screen ) {
+						width: 75%;
+					}
 					a {
 						color: $slate;
 						font-weight: 700;
@@ -87,6 +102,12 @@ body {
 			}
 		}
 		.exploration-slider {
+			.overlay {
+				height: 100%;
+				position: absolute;
+				width: 100%;
+				@include linear-gradient(to top, $black 0%, $transparent 35%, $fallback: transparent);
+			}
 			.slick-slide {
 				position: relative;
 			}
@@ -95,10 +116,10 @@ body {
 				color: $white;
 				left: 50%;
 				position: absolute;
-				width: 100%;
 				@include transform(translateX(-50%));
 				.post-type {
-					color: $mustard;
+					color: $white;
+					letter-spacing: 2px;
 					text-transform: uppercase;
 					&:hover {
 						color: $white;
@@ -192,10 +213,12 @@ body {
 		.section-supporting {
 			background: $light-gray;
 			vertical-align: middle;
-			padding: $twentyfive;
+			padding: $twentyfive $twentyfive $hundred;
+			@include media( $large-screen ) {
+				padding: $twentyfive;
+			}
 			.section-content {
 				@include media( $large-screen ) {
-					margin-right: $fifty;
 					text-align: right;
 				}
 				.section-title {
@@ -217,10 +240,18 @@ body {
 		}
 	}
 	.partnerships {
+		background: $light-gray;
 		.section-portal,
 		.section-supporting {
 			@include media( $large-screen ) {
 				@include span-columns(6, table);
+			}
+		}
+		.section-portal {
+			@include media( $large-screen ) {
+				img {
+					width: 100%;
+				}
 			}
 		}
 		.section-supporting {
@@ -233,9 +264,6 @@ body {
 				margin-bottom: 0;
 			}
 			.section-content {
-				@include media( $large-screen ) {
-					margin-left: $fifty;
-				}
 				.section-title {
 					@include row();
 					margin-bottom: $twenty;
@@ -249,8 +277,19 @@ body {
 					}
 				}
 				.partner-logos {
+					float: left;
+					margin-bottom: $fifty;
+					@include media( $large-screen ) {
+						float: inherit;
+						margin-bottom: 0;
+					}
 					.partner-logo {
-						@include span-columns(3);
+						@include span-columns(6);
+						@include omega(2);
+						@include media( $large-screen ) {
+							@include span-columns(3);
+							@include omega(4);
+						}
 						img {
 							max-width: 100px;
 						}
@@ -267,12 +306,15 @@ body {
 		@include row();
 		background: $light-gray;
 		.section-portal {
-			padding: $twentyfive;
+			padding: $twentyfive $twentyfive $hundred;
 			@include media( $large-screen ) {
 				@include span-columns(5, table);
 				vertical-align: middle;
 				padding: $fifty;
   			}
+			h1 {
+				margin: $ten 0;
+			}
 		}
 		.section-supporting {
 			@include media( $large-screen ) {
@@ -283,20 +325,7 @@ body {
 			}
 		}
 	}
-	.entry:last-of-type {
-		margin-bottom: $hundred;
-		@include media( $large-screen ) {
-			margin-bottom: 0;
-		}
-	}
 	.odd-row {
-		.section-portal {
-			@include media( $large-screen ) {
-				text-align: right;
-			}
-		}
-	}
-	.even-row {
 		display: flex;
 		flex-flow: column-reverse;
 		@include media( $large-screen ) {
@@ -304,15 +333,28 @@ body {
 			flex-flow: column;
 		}
 		.section-portal {
+			@include media( $large-screen ) {
+				text-align: right;
+			}
+		}
+	}
+	.even-row {
+		@include media( $large-screen ) {
+			display: block;
+			flex-flow: column;
+		}
+		.section-portal {
+			clear: both;
 			text-align: left;
 		}
 	}
 	.post-navigation {
 		@include row();
 		background: $light-gray;
-		padding: 0 $twentyfive $fifty;
+		padding: $fifty $twentyfive;
 		a {
 			color: $slate;
+			font-weight: 700;
 		}
 		.older {
 			@include span-columns(6);
@@ -326,6 +368,7 @@ body {
 
 .content-area {
 	.section-lead-in {
+		background: $white;
 		@include row();
 		padding: $fifty 0;
 		.section-title {
@@ -333,14 +376,64 @@ body {
 			h1 {
 				margin-bottom: $twentyfive;
 			}
+			h4 {
+				color: $medium-gray;
+				margin-bottom: $ten;
+			}
+		}
+		.section-logo {
+			@include span-columns(4);
+			@include shift(4);
+			img {
+				left: 50%;
+				position: relative;
+				width: 150px;
+				@include transform(translateX(-50%));
+			}
 		}
 		.section-lead-in-description {
+			text-align: center;
 			@include span-columns(10);
 			@include shift(1);
 			@include media( $large-screen ) {
 				@include span-columns(6);
 				@include shift(3);
 			}
+		}
+	}
+}
+
+.maintenance-page {
+	font-family: $lora;
+	height: 100vh;
+	width: 100vw;
+	background: {
+		image: url(/wp-content/uploads/2015/11/22962724306_e477bb03c0_k.jpg);
+		repeat: no-repeat;
+		position: center center;
+		size: cover;
+	}
+	.content {
+		color: $white;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		@include transform(translate(-50%,-50%));
+		width: 400px;
+		.logo {
+			margin: 0 auto;
+			max-width: 350px;
+			svg {
+				width: 100%;
+			}
+		}
+		.back-soon {
+			padding: $twentyfive 0;
+		}
+		a {
+			color: $white;
+			text-decoration: underline;
 		}
 	}
 }

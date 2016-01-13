@@ -58,6 +58,8 @@ get_header(); ?>
 
 				</div>
 
+				<?php if(function_exists(simple_breadcrumb)) {simple_breadcrumb();} ?>
+
 				<div class="content-area">
 
 					<div class="exploration-term">
@@ -78,51 +80,31 @@ get_header(); ?>
 								if( $images ): ?>
 									<?php foreach( $images as $image ): ?>
 
-										<picture class="portal-image">
-											<!--[if IE 9]><video style="display: none"><![endif]-->
-											<source
-												srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
-												media="(max-width: 500px)" />
-											<source
-												srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
-												media="(max-width: 860px)" />
-											<source
-												srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
-												media="(max-width: 1180px)" />
-											<source
-												srcset="<?php echo $image['sizes']['portal-retina']; ?>"
-												media="(min-width: 1181px)" />
-											<!--[if IE 9]></video><![endif]-->
-											<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
-										</picture>
+										<div class="portal-image">
+											<picture>
+												<!--[if IE 9]><video style="display: none"><![endif]-->
+												<source
+													srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+													media="(max-width: 500px)" />
+												<source
+													srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+													media="(max-width: 860px)" />
+												<source
+													srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+													media="(max-width: 1180px)" />
+												<source
+													srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+													media="(min-width: 1181px)" />
+												<!--[if IE 9]></video><![endif]-->
+												<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
+											</picture>
+											<div class="slide-caption">
+												<?php echo $image['caption']; ?>
+											</div>
+										</div>
 
 									<?php endforeach; ?>
 								<?php endif; ?>
-
-							<?php else: ?>
-
-								<?php $mobile_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
-								<?php $tablet_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
-								<?php $desktop_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
-								<?php $retina_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
-
-								<picture class="single-image">
-									<!--[if IE 9]><video style="display: none"><![endif]-->
-									<source
-										srcset="<?php echo $mobile_page_banner[0]; ?>"
-										media="(max-width: 500px)" />
-									<source
-										srcset="<?php echo $tablet_page_banner[0]; ?>"
-										media="(max-width: 860px)" />
-									<source
-										srcset="<?php echo $desktop_page_banner[0]; ?>"
-										media="(max-width: 1180px)" />
-									<source
-										srcset="<?php echo $retina_page_banner[0]; ?>"
-										media="(min-width: 1181px)" />
-									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $image[0]; ?>">
-								</picture>
 
 							<?php endif; ?>
 
@@ -193,9 +175,9 @@ get_header(); ?>
 
 					</div>
 
-					<div class="exploration-section list-callout need-to-knows">
+					<?php if( have_rows('need_to_knows') ) : ?>
 
-						<?php if( have_rows('need_to_knows') ) : ?>
+						<div class="exploration-section list-callout need-to-knows">
 
 							<h4>Need to Know:</h4>
 							<ul>
@@ -210,9 +192,9 @@ get_header(); ?>
 								<?php endwhile; ?>
 							</ul>
 
-						<?php endif; ?>
+						</div>
 
-					</div>
+					<?php endif; ?>
 
 				</div>
 
@@ -243,10 +225,12 @@ get_header(); ?>
 
 			</div>
 
+			<?php if(function_exists(simple_breadcrumb)) {simple_breadcrumb();} ?>
+
 			<div class="content-area">
 
 				<div class="exploration-term">
-					Featured Route
+					Trip Report
 				</div>
 				<h1 class="exploration-title"><?php the_title(); ?></h1>
 
@@ -263,23 +247,28 @@ get_header(); ?>
 							if( $images ): ?>
 								<?php foreach( $images as $image ): ?>
 
-									<picture class="portal-image">
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
-											media="(max-width: 500px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
-											media="(max-width: 860px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
-											media="(max-width: 1180px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-retina']; ?>"
-											media="(min-width: 1181px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
-									</picture>
+									<div class="portal-image">
+										<picture>
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+												media="(max-width: 500px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+												media="(max-width: 860px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+												media="(max-width: 1180px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+												media="(min-width: 1181px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
+										</picture>
+										<div class="slide-caption">
+											<?php echo $image['caption']; ?>
+										</div>
+									</div>
 
 								<?php endforeach; ?>
 							<?php endif; ?>
@@ -343,9 +332,9 @@ get_header(); ?>
 
 				</div>
 
-				<div class="exploration-section list-callout need-to-knows">
+				<?php if( have_rows('need_to_knows') ) : ?>
 
-					<?php if( have_rows('need_to_knows') ) : ?>
+					<div class="exploration-section list-callout need-to-knows">
 
 						<h4>Need to Know:</h4>
 						<ul>
@@ -360,9 +349,9 @@ get_header(); ?>
 							<?php endwhile; ?>
 						</ul>
 
-					<?php endif; ?>
+					</div>
 
-				</div>
+				<?php endif; ?>
 
 			</div>
 			<?php endif; ?>
@@ -392,6 +381,8 @@ get_header(); ?>
 
 			</div>
 
+			<?php if(function_exists(simple_breadcrumb)) {simple_breadcrumb();} ?>
+
 			<div class="content-area">
 
 				<div class="exploration-term">
@@ -412,23 +403,28 @@ get_header(); ?>
 							if( $images ): ?>
 								<?php foreach( $images as $image ): ?>
 
-									<picture class="portal-image">
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
-											media="(max-width: 500px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
-											media="(max-width: 860px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
-											media="(max-width: 1180px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-retina']; ?>"
-											media="(min-width: 1181px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
-									</picture>
+									<div class="portal-image">
+										<picture>
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+												media="(max-width: 500px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+												media="(max-width: 860px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+												media="(max-width: 1180px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+												media="(min-width: 1181px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
+										</picture>
+										<div class="slide-caption">
+											<?php echo $image['caption']; ?>
+										</div>
+									</div>
 
 								<?php endforeach; ?>
 							<?php endif; ?>

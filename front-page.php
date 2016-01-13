@@ -19,7 +19,7 @@ get_header(); ?>
 			arrows: false,
 			dots: true,
 			autoplay: true,
-			autoplaySpeed: 3000,
+			autoplaySpeed: 5000,
 			pauseOnHover: true,
 			centered: true,
 			mobileFirst: true,
@@ -33,7 +33,7 @@ get_header(); ?>
 			autoplay: false,
 			centerMode: true,
 			mobileFirst: true,
-		    // lazyLoad: 'ondemand',
+		    lazyLoad: 'ondemand',
 		});
 
 	});
@@ -91,6 +91,7 @@ get_header(); ?>
 									<!--[if IE 9]></video><![endif]-->
 									<img srcset="<?php echo $image[0]; ?>">
 								</picture>
+								<div class="overlay"></div>
 
 								<div class="slide-caption">
 									<?php

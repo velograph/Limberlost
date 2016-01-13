@@ -1,54 +1,42 @@
 <?php
 /**
- * The main template file.
+ * Template Name: Partnerships
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
  *
  * @package Limberlost
  */
 
 get_header(); ?>
 
-	<div class="content-area exploration offset-alternating">
+	<div class="content-area partnerships offset-alternating">
 
 		<section class="section">
+
 			<div class="section-lead-in">
+
 				<div class="section-title">
-					<h1>Exploration</h1>
+					<h1>Partnerships</h1>
 				</div>
-				<div class="exploration-taxonomies">
-					<div class="taxonomy">
-						<h4>Routes</h4>
-						<?php the_field('routes_description',2060); ?>
-						<a class="read-more-link" href="/category/reports/">See all featured routes.</a>
-					</div>
-					<div class="taxonomy">
-						<h4>Reports</h4>
-						<?php the_field('reports_description',2060); ?>
-						<a class="read-more-link" href="/category/reports/">See all trip reports.</a>
-					</div>
-					<div class="taxonomy">
-						<h4>Gear</h4>
-						<?php the_field('gear_description',2060); ?>
-						<a class="read-more-link" href="/category/reports/">See all gear posts.</a>
-					</div>
+
+				<div class="section-lead-in-description">
+					<?php the_field('section_description', 2104); ?>
 				</div>
+
 			</div>
+
 		</section>
 
 		<?php
 
 		$oddpost = 'odd-row';
 
-		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	    $args = array(
-	        'post_type' => 'post',
-			'posts_per_page' => 5,
-			'paged' => $paged,
+	        'post_type' => 'partnership',
+			'posts_per_page' => 4,
 	    );
 	    $query = new WP_Query($args);
 
@@ -60,32 +48,7 @@ get_header(); ?>
 
 				<?php if ($query->current_post % 2 == 0): ?>
 
-					<section class="entry <?php echo $oddpost; ?>">
-
-						<?php if( has_term('routes','category') ) : ?>
-							<div class="section-portal route-map" style="background-image: url('<?php the_field('map_image'); ?>');">
-						<?php else: ?>
-							<div class="section-portal">
-						<?php endif; ?>
-
-							<div class="section-content">
-
-								<?php if( has_term('routes','category') ) : ?>
-									<span class="featured-route-title">Featured Route:</span>
-								<?php endif; ?>
-								<h1>
-									<a href="<?php the_permalink(); ?>">
-										<?php the_title() ?>
-									</a>
-								</h1>
-								<div class="excerpt">
-									<?php echo substr(get_the_excerpt(), 0,220); ?>
-								</div>
-								<a class="read-more" href="<?php the_permalink(); ?>">See More&nbsp;&gt;</a>
-
-							</div>
-
-						</div>
+					<section class="<?php echo $oddpost; ?>">
 
 						<div class="section-supporting">
 
@@ -113,6 +76,35 @@ get_header(); ?>
 									<img srcset="<?php echo $image[0]; ?>">
 								</picture>
 							</a>
+
+						</div>
+
+						<div class="section-portal">
+
+							<div class="section-content">
+
+								<div class="company-logo">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+											$image = get_field('company_logo');
+											$size = 'thumb';
+											echo wp_get_attachment_image( $image, $size );
+										?>
+									</a>
+								</div>
+								<div class="company-name">
+									<h1>
+										<a href="<?php the_permalink(); ?>">
+											<?php the_title() ?>
+										</a>
+									</h1>
+									<div class="excerpt">
+										<?php echo substr(get_the_excerpt(), 0,220); ?>
+									</div>
+									<a class="read-more" href="<?php the_permalink(); ?>">View Case Study ></a>
+								</div>
+
+							</div>
 
 						</div>
 
@@ -120,7 +112,35 @@ get_header(); ?>
 
 				<?php else: ?>
 
-					<section class="entry <?php echo $oddpost; ?>">
+					<section class="<?php echo $oddpost; ?>">
+
+						<div class="section-portal">
+
+							<div class="section-content">
+
+								<div class="company-logo">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+											$image = get_field('company_logo');
+											$size = 'thumb';
+											echo wp_get_attachment_image( $image, $size );
+										?>
+									</a>
+								</div>
+								<div class="company-name">
+									<h1>
+										<a href="<?php the_permalink(); ?>">
+											<?php the_title() ?>
+										</h1>
+									<div class="excerpt">
+										<?php echo substr(get_the_excerpt(), 0,220); ?>
+									</div>
+									<a class="read-more" href="<?php the_permalink(); ?>">View Case Study ></a>
+								</div>
+
+							</div>
+
+						</div>
 
 						<div class="section-supporting">
 
@@ -148,31 +168,6 @@ get_header(); ?>
 									<img srcset="<?php echo $image[0]; ?>">
 								</picture>
 							</a>
-
-						</div>
-
-						<?php if( has_term('routes','category') ) : ?>
-							<div class="section-portal route-map" style="background-image: url('<?php the_field('map_image'); ?>');">
-						<?php else: ?>
-							<div class="section-portal">
-						<?php endif; ?>
-
-							<div class="section-content">
-
-								<?php if( has_term('routes','category') ) : ?>
-									<span class="featured-route-title">Featured Route:</span>
-								<?php endif; ?>
-								<h1>
-									<a href="<?php the_permalink(); ?>">
-										<?php the_title() ?>
-									</a>
-								</h1>
-								<div class="excerpt">
-									<?php echo substr(get_the_excerpt(), 0,220); ?>
-								</div>
-								<a class="read-more" href="<?php the_permalink(); ?>">See More&nbsp;&gt;</a>
-
-							</div>
 
 						</div>
 
@@ -189,10 +184,14 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		<div class="post-navigation">
-			<div class="older"><?php next_posts_link( '&laquo; Older', '' ); ?></div>
-			<div class="newer"><?php previous_posts_link( 'Newer &raquo;' ); ?></div>
-		</div>
+		<section class="partner-contact-form-container">
+
+			<div class="partner-contact-form">
+				<h1>Resonate with your Customers</h1>
+				<?php echo do_shortcode('[gravityform id="1" title="false" description="true"]'); ?>
+			</div>
+
+		</section>
 
 	</div>
 

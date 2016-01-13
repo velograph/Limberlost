@@ -1,63 +1,82 @@
-.partnerships {
-	.even-row,
-	.odd-row {
-		background: $light-gray;
-		.company-logo {
-			@include row();
-		}
-	}
-	.even-row {
-		.company-logo {
-			img {
-				margin-bottom: $ten;
-				@include media( $large-screen ) {
-					float: right;
+.post-type-archive-partnership {
+	.partnerships {
+		.even-row,
+		.odd-row {
+			background: $light-gray;
+			.company-logo {
+				@include row();
+			}
+			.company-name {
+				a.read-more {
+					font-weight: 700;
 				}
 			}
 		}
-		.company-name {
+		.even-row {
+			display: flex;
+			flex-flow: column-reverse;
 			@include media( $large-screen ) {
-				text-align: right;
+				display: block;
+				flex-flow: column;
 			}
-		}
-	}
-	.odd-row {
-		.company-logo {
-			text-align: left;
-		}
-		.company-name {
-			text-align: left;
-		}
-	}
-	.partner-contact-form-container {
-		background: $cream;
-		padding: $fifty 0 $hundred;
-		.partner-contact-form {
-			@include outer-container;
-			h1 {
-				@include span-columns(8);
-				@include shift(2);
-				text-align: center;
-			}
-			.gform_wrapper {
-				.gform_heading {
-					@include span-columns(8);
-					@include shift(2);
-					padding: $twentyfive 0;
-					text-align: center;
-				}
-				.gform_body {
-					@include span-columns(6);
-					@include shift(3);
-					.gfield {
-						label {
-							display: none;
-						}
+			.company-logo {
+				img {
+					margin-bottom: $ten;
+					@include media( $large-screen ) {
+						float: right;
 					}
 				}
-				.gform_footer {
-					@include span-columns(6);
-					@include shift(3);
+			}
+			.company-name {
+				@include media( $large-screen ) {
+					text-align: right;
+				}
+			}
+		}
+		.odd-row {
+			display: block;
+			flex-flow: column;
+			@include media( $large-screen ) {
+				// display: flex;
+				// flex-flow: column-reverse;
+			}
+		.company-logo {
+				text-align: left;
+			}
+			.company-name {
+				text-align: left;
+			}
+		}
+		.partner-contact-form-container {
+			background: $cream;
+			padding: $fifty 0 $hundred;
+			.partner-contact-form {
+				@include outer-container;
+				h1 {
+					@include span-columns(8);
+					@include shift(2);
+					text-align: center;
+				}
+				.gform_wrapper {
+					.gform_heading {
+						@include span-columns(8);
+						@include shift(2);
+						padding: $twentyfive 0;
+						text-align: center;
+					}
+					.gform_body {
+						@include span-columns(6);
+						@include shift(3);
+						.gfield {
+							label {
+								display: none;
+							}
+						}
+					}
+					.gform_footer {
+						@include span-columns(6);
+						@include shift(3);
+					}
 				}
 			}
 		}

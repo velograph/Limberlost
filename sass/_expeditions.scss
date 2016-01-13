@@ -19,7 +19,10 @@
 			vertical-align: middle;
 			.section-content {
 				padding: $fifty;
-				a {
+				h1 {
+					margin: $ten 0;
+				}
+				a.read-more {
 					font-weight: 700;
 				}
 			}

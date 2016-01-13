@@ -3,7 +3,7 @@ body {
   background-color: $base-background-color;
   color: $base-font-color;
   font-family: $lora;
-  font-size: $base-font-size;
+  font-size: 16px;
   line-height: $base-line-height;
 }
 
@@ -22,7 +22,7 @@ h6 {
 h1 {
     font-size: $h1-font-size;
     font-weight: 400;
-    letter-spacing: .5rem;
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
 
@@ -36,6 +36,7 @@ h3 {
 
 h4 {
     font-size: $h4-font-size;
+    font-weight: 400;
 }
 
 h5 {
@@ -49,7 +50,8 @@ h6 {
 }
 
 p {
-  margin: 0 0 ($base-spacing / 2);
+    font-size: 16px;
+    margin: 0 0 ($base-spacing / 2);
 }
 
 a {

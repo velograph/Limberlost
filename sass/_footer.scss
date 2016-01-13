@@ -1,34 +1,5 @@
-.mailing-list {
-	@include row();
-	position: relative;
-	.section-portal {
-	}
-	.section-supporting {
-		background: $light-gray;
-		top: 50%;
-		position: absolute;
-		width: 100%;
-		@include transform(translateY(-50%));
-		.section-content {
-			@include outer-container;
-			margin-bottom: $twenty;
-			margin-top: $twenty;
-			h4 {
-				@include span-columns(4);
-				@include shift(2);
-			}
-			.epm-sign-up-form {
-				@include span-columns(4);
-				label[for="epm-email"],
-				.epm-sign-up-button {
-					display: none;
-				}
-				input.email {
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
+.instagram {
+	background: $light-gray;
 }
 
 .footer-container {
@@ -105,14 +76,30 @@
 				@include span-columns(3);
 				@include shift(0);
 			}
-			.social-account {
-				@include span-columns(2);
-				&:first-of-type {
-					@include shift(3);
+			.epm-sign-up-form {
+				@include span-columns(10);
+				margin-bottom: $twentyfive;
+				label[for="epm-email"],
+				.epm-sign-up-button {
+					display: none;
 				}
-				svg {
-					fill: $slate;
-					max-width: $twentyfive;
+				input.email {
+					background: $slate;
+					color: $white;
+					font-family: $lora;
+					margin-bottom: 0;
+				}
+			}
+
+			.social-accounts {
+				@include row();
+				clear: both;
+				.social-account {
+					@include span-columns(2);
+					svg {
+						fill: $slate;
+						max-width: $twentyfive;
+					}
 				}
 			}
 		}

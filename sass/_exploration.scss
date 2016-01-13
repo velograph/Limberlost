@@ -1,7 +1,14 @@
 .exploration {
+	background: $light-gray;
 	.section {
 		@include row();
 		.section-lead-in {
+			h1 {
+				margin-bottom: 0;
+				@include media( $medium-screen ) {
+					margin-bottom: $twentyfive;
+				}
+			}
 			.exploration-taxonomies {
 				display: none;
 				@include media( $medium-screen ) {
@@ -28,19 +35,30 @@
 		}
 	}
 	.section-portal {
+		h1 {
+			margin: $ten 0;
+		}
 		.featured-route-title {
 			background: $slate;
-			color: $mustard;
-			padding: $five $ten;
+			color: $white;
+			letter-spacing: 3px;
+			padding: $five $twenty;
+			text-transform: uppercase;
+		}
+		.excerpt {
+			margin-bottom: $ten;
 		}
 		a {
 			color: $slate;
-			font-weight: 700;
+			&.read-more {
+				font-weight: 700;
+			}
 		}
 	}
 }
 
 .single-exploration {
+	background: $light-gray;
 	.content-area {
 		@include outer-container;
 		.exploration-term {
@@ -66,13 +84,17 @@
 		.gallery-container {
 			@include row();
 			.main-image {
-				@include span-columns(10);
-				@include shift(1);
+				@include span-columns(12);
 				margin-bottom: 2.35765%;
 				@include media( $large-screen ) {
 					@include span-columns(8);
 					@include shift(2);
 					margin-bottom: 0;
+				}
+				.slide-caption {
+					display: inline-block;
+					margin-top: $five;
+					text-align: center;
 				}
 			}
 			.image-thumbs {
@@ -85,10 +107,18 @@
 				img {
 					@include span-columns(2);
 					@include omega(6n);
+					opacity: .5;
 					margin-bottom: 2.35765%;
 					@include media( $large-screen ) {
 						@include span-columns(4);
 						@include omega(3n);
+					}
+					&.slick-current {
+						opacity: 1;
+					}
+					&:hover {
+						cursor: pointer;
+						opacity: .9;
 					}
 				}
 			}
@@ -96,10 +126,13 @@
 		.list-callout  {
 			padding: $twentyfive;
 			h4 {
+				letter-spacing: 4px;
 				margin-bottom: $twenty;
+				text-transform: uppercase;
 			}
 			ul {
 				li {
+					font-weight: 700;
 					list-style-type: disc;
 					margin: 0 0 $fifteen $twenty;
 				}
@@ -108,7 +141,7 @@
 		.details-intro {
 			@include row();
 			.route-details {
-				background: $slate;
+				background: $medium-gray;
 				color: $white;
 				@include span-columns(10);
 				@include shift(1);
@@ -120,11 +153,12 @@
 				}
 			}
 			.route-intro {
-				font-size: $h4-font-size;
+				font-size: 18px;
 				@include span-columns(10);
 				@include shift(1);
 				@include media( $large-screen ) {
 					@include span-columns(4);
+					@include shift(0);
 				}
 			}
 		}
@@ -151,29 +185,41 @@
 				max-width: 100%;
 				padding: 0;
 			}
-			.wp-caption-text {
-				color: $medium-gray;
-				font-size: 12px;
-				font-style: italic;
+			ul {
+				border-left: 1px solid $slate;
+				padding-left: $twentyfive;
+				li {
+					line-height: $twentyfive;
+					list-style-type: none;
+					margin-bottom: $fifteen;
+				}
 			}
 		}
 		.pullquote {
-			@include span-columns(8);
-			@include shift(2);
 			color: $medium-gray;
 			font-style: italic;
 			font-size: $h3-font-size;
 			text-align: center;
+			@include span-columns(10);
+			@include shift(1);
+			@include media( $large-screen ) {
+				@include span-columns(8);
+				@include shift(2);
+			}
 		}
 		.need-to-knows {
 			@include span-columns(10);
 			@include shift(1);
-			background: $slate;
+			background: $medium-gray;
 			color: $white;
 			margin-bottom: $hundred;
 			@include media( $large-screen ) {
-				@include span-columns(4);
-				@include shift(4);
+				@include span-columns(6);
+				@include shift(3);
+			}
+			a {
+				color: $white;
+				text-decoration: underline;
 			}
 		}
 	}

@@ -1,0 +1,28 @@
+.outfitting-temp {
+	color: $white;
+	position: relative;
+	height: 100vh;
+	background: {
+		image: url(/wp-content/uploads/2015/12/building_products-1.jpg);
+		position: center top;
+		repeat: no-repeat;
+		size: cover;
+	}
+	.placeholder-content {
+		left: 50%;
+		max-width: 500px;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		@include transform(translate(-50%,-50%));
+		p {
+			padding-bottom: $fifty;
+		}
+	}
+}
+
+.page-template-outfitting {
+	.mailing-list {
+		clear: both;
+	}
+}

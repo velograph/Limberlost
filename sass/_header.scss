@@ -1,4 +1,38 @@
 .desktop-site-header {
+	.menu-item {
+		border-top: 3px solid $slate;
+	}
+}
+
+.post-type-archive-partnership,
+.single-partnership {
+	li.partnerships {
+		border-top-color: $white;
+	}
+}
+
+.page-template-expeditions,
+.custom-tax-guided-expedition {
+	li.expeditions {
+		border-top-color: $white;
+	}
+}
+
+.page-template-outfitting {
+	li.outfitting {
+		border-top-color: $white;
+	}
+}
+
+.blog,
+.category,
+.single-post {
+	li.exploration {
+		border-top-color: $white;
+	}
+}
+
+.desktop-site-header {
 	@include row();
 	background: $slate;
 	display: none;
@@ -15,7 +49,8 @@
 			}
 			.site-title {
 				svg {
-					padding: $ten 0;
+					max-width: 95%;
+					padding: $twenty $twentyfive;
 					vertical-align: middle;
 					path {
 						fill: $white;
@@ -32,18 +67,16 @@
 					text-align: center;
 					.menu-item {
 						@include span-columns(3);
-						border-top: 3px solid $slate;
+						background: transparent;
 						padding-top: $thirty;
 						a {
+							font-size: 12px;
+							letter-spacing: 2px;
 							text-transform: uppercase;
 							color: $white;
 							&:hover {
 								color: $medium-gray;
 							}
-						}
-						&.current_page_item,
-						&.current_page_parent {
-							border-top-color: $white;
 						}
 					}
 				}
@@ -59,8 +92,10 @@
 					background: $black;
 					border: none;
 					color: $white;
-					font-size: 12px;
-					font-style: italic;
+					font: {
+						family: $lora;
+						size: 12px;
+					}
 				}
 				.search-submit {
 					display: none;
@@ -68,16 +103,20 @@
 			}
 			.utility-link {
 				@include span-columns(2);
+				display: none;
 				text-align: right;
 				svg {
 					max-width: $fifteen;
 					vertical-align: middle;
 					path {
-						fill: $light-gray;
+						fill: $medium-gray;
 					}
 				}
 				a {
-					color: $white;
+					color: $medium-gray;
+				}
+				.cart-count {
+					vertical-align: middle;
 				}
 			}
 		}
@@ -114,8 +153,8 @@
 	}
 }
 .mobile-menu-container {
-	@include span-columns(6);
-	@include shift(6);
+	@include span-columns(8);
+	@include shift(4);
 	background: $black;
 	padding: $twentyfive;
 	position: absolute;
@@ -129,6 +168,7 @@
 				text-transform: uppercase;
 				a {
 					display: block;
+					letter-spacing: 2px;
 					margin-bottom: $fifteen;
 				}
 				.sub-menu {
@@ -136,6 +176,11 @@
 					li {
 						margin-bottom: $fifteen;
 						text-transform: none;
+						a {
+							color: $medium-gray;
+							font-size: 12px;
+							letter-spacing: inherit;
+						}
 					}
 				}
 			}
@@ -143,6 +188,7 @@
 	}
 	.utility-navigation {
 		.utility-link {
+			display: none;
 			margin-bottom: $fifteen;
 			.utility-text {
 				font-size: 12px;
@@ -151,15 +197,19 @@
 			svg {
 				max-width: $fifteen;
 				path {
-					fill: $white;
+					fill: $medium-gray;
 				}
+			}
+			a {
+				color: $medium-gray;
 			}
 		}
 		.search-field {
-			background: $medium-gray;
+			background: $slate;
 			border: none;
 			border-radius: 0;
 			color: $white;
+			font-family: $lora;
 			font-size: 12px;
 			font-style: italic;
 		}

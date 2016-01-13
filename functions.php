@@ -179,3 +179,19 @@ function my_login_logo_url_title() {
     return 'Adventures off the beaten path.';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+// add taxoonomy term to body_class
+function wpprogrammer_custom_taxonomy_in_body_class( $classes ){
+  if( is_singular() )
+  {
+    $custom_terms = get_the_terms(0, 'product_cat');
+    if ($custom_terms) {
+      foreach ($custom_terms as $custom_term) {
+        $classes[] = 'custom-tax-' . $custom_term->slug;
+      }
+    }
+  }
+  return $classes;
+}
+
+add_filter( 'body_class', 'wpprogrammer_custom_taxonomy_in_body_class' );
