@@ -42,3 +42,85 @@
 		}
 	}
 }
+
+.expedition-banner {
+	@include row();
+}
+.single-expedition {
+	.section-lead-in-teaser {
+		text-align: center;
+	}
+	.column-container {
+		@include outer-container;
+	}
+	.column-one {
+		@include span-columns(8);
+	}
+	.column-two {
+		@include span-columns(4);
+	}
+	h2 {
+		margin-bottom: $fifteen;
+	}
+	.slick-slider {
+		margin-bottom: $fifty;
+	}
+	.expedition-content {
+		margin-bottom: $fifty;
+	}
+	.daily-itinerary {
+		background: $light-gray;
+		padding: $twentyfive;
+		.day {
+			margin-bottom: $fifteen;
+		}
+		.itinerary {
+			margin-bottom: $fifteen;
+		}
+	}
+	.route-details {
+		background: $slate;
+		color: $white;
+		margin-bottom: $fifty;
+		padding: $twentyfive;
+		li {
+			font-size: $h4-font-size;
+			margin-bottom: $ten;
+		}
+	}
+	.add-to-cart {
+		@include row();
+		margin-bottom: $fifty;
+		h3 {
+			@include span-columns(4);
+		}
+		.button {
+			@include span-columns(6);
+			@include shift(2);
+		}
+	}
+	.you-get-you-should {
+		li {
+			list-style-type: disc;
+			margin-bottom: $ten;
+			margin-left: $twentyfive;
+		}
+	}
+	.you-get {
+		background: $medium-gray;
+		margin-bottom: $fifty;
+		padding: $twentyfive;
+	}
+	.you-should {
+		background: $medium-gray;
+		margin-bottom: $fifty;
+		padding: $twentyfive;
+	}
+	.supporting-images {
+		@include row();
+		.supporting-image {
+			@include span-columns(12);
+			margin-bottom: $twentyfive;
+		}
+	}
+}
