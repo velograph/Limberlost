@@ -25,6 +25,9 @@
 				margin-bottom: $twentyfive;
 				@include media( $large-screen ) {
 				}
+				&:hover {
+					color: $medium-gray;
+				}
 			}
 		}
 		.menu-item {
@@ -49,7 +52,7 @@
 				@include span-columns(3);
 				@include shift(0);
 				svg {
-					max-width: 150px;
+					max-width: $hundred;
 				}
 			}
 		}
@@ -99,6 +102,10 @@
 					svg {
 						fill: $slate;
 						max-width: $twentyfive;
+						@include transition(all 0.2s linear);
+						&:hover {
+							fill: $medium-gray;
+						}
 					}
 				}
 			}

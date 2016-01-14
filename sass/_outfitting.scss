@@ -19,6 +19,15 @@
 			padding-bottom: $fifty;
 		}
 	}
+	.epm-sign-up-form {
+		label {
+			display: none;
+		}
+		input[type="email"] {
+			background: $slate;
+			color: $white;
+		}
+	}
 }
 
 .page-template-outfitting {

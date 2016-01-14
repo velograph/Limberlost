@@ -1,4 +1,4 @@
-.even-alternating {
+.offset-alternating {
 	.even-row,
 	.odd-row {
 		@include row();
@@ -18,12 +18,32 @@
 			clear: both;
 			vertical-align: middle;
 			.section-content {
-				padding: $fifty;
+				// padding: $fifty;
 				h1 {
 					margin: $ten 0;
 				}
 				a.read-more {
 					font-weight: 700;
+					.arrow {
+						padding-left: $five;
+						vertical-align: sub;
+						svg {
+							height: $fifteen;
+							@include transition(all 0.2s linear);
+							width: $fifteen;
+							path {
+								fill: $black;
+							}
+						}
+					}
+					&:hover {
+						color: $medium-gray;
+						svg {
+							path {
+								fill: $medium-gray;
+							}
+						}
+					}
 				}
 			}
 		}

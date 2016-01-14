@@ -17,6 +17,8 @@ get_header(); ?>
 
 				<?php the_content(); ?>
 
+				<?php echo do_shortcode('[epm_mailchimp]'); ?>
+
 			</div>
 
 		<?php endwhile; // end of the loop. ?>

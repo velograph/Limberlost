@@ -89,9 +89,14 @@
 			.search-form {
 				@include span-columns(8);
 				.search-field {
-					background: $black;
+					background-color: $black;
+					background-image: url('../images/magnifying_glass.svg');
+					background-position: right center;
+					background-repeat: no-repeat;
+					background-size: 10%;
 					border: none;
 					color: $white;
+					padding: $five $fifteen $five $five;
 					font: {
 						family: $lora;
 						size: 12px;

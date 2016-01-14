@@ -48,10 +48,19 @@
 		.excerpt {
 			margin-bottom: $ten;
 		}
-		a {
+		a.read-more {
 			color: $slate;
-			&.read-more {
-				font-weight: 700;
+			font-weight: 700;
+			.arrow {
+				padding-left: $five;
+				vertical-align: sub;
+				svg {
+					height: $fifteen;
+					width: $fifteen;
+					path {
+						fill: $black;
+					}
+				}
 			}
 		}
 	}
@@ -66,7 +75,8 @@
 			@include shift(2);
 			background: $slate;
 			color: $white;
-			font-weight: 700;
+			font-weight: 400;
+			letter-spacing: 2px;
 			margin-bottom: $fifteen;
 			margin-top: $fifty;
 			padding: $ten 0;
@@ -153,12 +163,14 @@
 				}
 			}
 			.route-intro {
-				font-size: 18px;
 				@include span-columns(10);
 				@include shift(1);
 				@include media( $large-screen ) {
 					@include span-columns(4);
 					@include shift(0);
+				}
+				p {
+					font-size: 18px;
 				}
 			}
 		}

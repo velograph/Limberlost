@@ -34,6 +34,7 @@ get_header(); ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php the_field('testimonial'); ?>
+						<?php the_field('attribution'); ?>
 
 					<?php endwhile; // end of the loop. ?>
 				</div>
