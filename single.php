@@ -257,9 +257,9 @@ get_header(); ?>
 			<!-- Reports! -->
 			<div class="exploration-banner">
 
-				<?php $mobile = wp_get_attachment_image_src(get_field('route_banner'), 'banner-mobile'); ?>
-				<?php $desktop = wp_get_attachment_image_src(get_field('route_banner'), 'banner-desktop'); ?>
-				<?php $retina = wp_get_attachment_image_src(get_field('route_banner'), 'banner-retina'); ?>
+				<?php $mobile = wp_get_attachment_image_src(get_field('report_banner'), 'banner-mobile'); ?>
+				<?php $desktop = wp_get_attachment_image_src(get_field('report_banner'), 'banner-desktop'); ?>
+				<?php $retina = wp_get_attachment_image_src(get_field('report_banner'), 'banner-retina'); ?>
 
 				<picture>
 					<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -440,7 +440,7 @@ get_header(); ?>
 
 					<div class="exploration-section list-callout need-to-knows">
 
-						<h4>Need to Know:</h4>
+						<h4>Notable Notes:</h4>
 						<ul>
 							<?php while ( have_rows('need_to_knows') ) : ?>
 

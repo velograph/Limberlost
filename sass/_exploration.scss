@@ -26,6 +26,14 @@
 						color: $black;
 						font-weight: 700;
 						margin-top: $ten;
+						.arrow {
+							svg {
+								max-width: $fifteen;
+								path {
+									fill: $slate;
+								}
+							}
+						}
 					}
 					&:first-of-type {
 						@include shift(2);

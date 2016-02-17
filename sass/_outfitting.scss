@@ -24,8 +24,12 @@
 			display: none;
 		}
 		input[type="email"] {
-			background: $slate;
-			color: $white;
+			background: $dark-gray;
+			border: none;
+			color: $light-gray;
+			font-family: $lora;
+			margin: 0 auto $fifty;
+			width: 50%;
 		}
 	}
 }

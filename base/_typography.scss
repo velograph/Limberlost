@@ -60,6 +60,7 @@ p {
 a {
   @include transition(color 0.1s linear);
   color: #3c4042;
+  font-weight: 700;
   text-decoration: none;
 
   &:hover {
