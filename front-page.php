@@ -18,7 +18,7 @@ get_header(); ?>
 		jQuery('.exploration-slider').slick({
 			arrows: false,
 			dots: true,
-			autoplay: false,
+			autoplay: true,
 			autoplaySpeed: 5000,
 			pauseOnHover: true,
 			centered: true,
@@ -375,7 +375,7 @@ get_header(); ?>
 
 					<div class="section-title">
 						<h1>
-							<a href="/partnerships">
+							<a href="/partnership">
 								Partnerships
 							</a>
 						</h1>

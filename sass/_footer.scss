@@ -1,14 +1,15 @@
 .instagram {
-	background: $light-gray;
+	background: $white;
 }
 
 .footer-container {
-	background: $light-gray;
+	background: $white;
 	padding: $fifty 0 0;
 	@include media( $large-screen ) {
 		padding: $hundred 0;
 	}
 	.footer {
+		color: $medium-gray;
 		text-align: center;
 		@include media( $large-screen ) {
 			text-align: left;
@@ -20,13 +21,13 @@
 				margin-bottom: 0;
 			}
 			a {
-				color: $slate;
+				color: $medium-gray;
 				display: block;
 				margin-bottom: $twentyfive;
 				@include media( $large-screen ) {
 				}
 				&:hover {
-					color: $medium-gray;
+					color: $slate;
 				}
 			}
 		}
@@ -82,29 +83,42 @@
 			.epm-sign-up-form {
 				@include span-columns(10);
 				margin-bottom: $twentyfive;
-				label[for="epm-email"],
-				.epm-sign-up-button {
-					display: none;
+				.epm-form-field {
+					@include span-columns(10);
+					label[for="epm-email"] {
+						display: none;
+					}
+					input.email {
+						background: $light-gray;
+						color: $white;
+						font-family: $lora;
+						margin-bottom: 0;
+					}
 				}
-				input.email {
-					background: $slate;
-					color: $white;
-					font-family: $lora;
-					margin-bottom: 0;
+				.epm-sign-up-button {
+					@include span-columns(2);
+					text-indent: -9999px;
+					background: {
+						color: transparent;
+						image: url(../images/drawn_arrow.png);
+						position: right center;
+						repeat: no-repeat;
+						size: $twentyfive $twentyfive;
+					}
 				}
 			}
-
 			.social-accounts {
 				@include row();
 				clear: both;
 				.social-account {
 					@include span-columns(2);
+					background-color: transparent;
 					svg {
-						fill: $slate;
+						fill: $medium-gray;
 						max-width: $twentyfive;
 						@include transition(all 0.2s linear);
 						&:hover {
-							fill: $medium-gray;
+							fill: $slate;
 						}
 					}
 				}
