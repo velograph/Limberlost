@@ -1,0 +1,43 @@
+.page-template-our-story {
+	.even-row,
+	.odd-row {
+		background: $light-gray;
+		.company-logo {
+			@include row();
+		}
+		.company-name {
+			a.read-more {
+				font-weight: 700;
+			}
+		}
+	}
+	.even-row {
+		display: flex;
+		flex-flow: column-reverse;
+		@include media( $large-screen ) {
+			display: block;
+			flex-flow: column;
+		}
+		.company-logo {
+			img {
+				margin-bottom: $ten;
+				@include media( $large-screen ) {
+					float: right;
+				}
+			}
+		}
+		.company-name {
+			@include media( $large-screen ) {
+				text-align: right;
+			}
+		}
+	}
+	.odd-row {
+		display: block;
+		flex-flow: column;
+		@include media( $large-screen ) {
+			// display: flex;
+			// flex-flow: column-reverse;
+		}
+	}
+}
